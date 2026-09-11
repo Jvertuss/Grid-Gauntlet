@@ -2,9 +2,9 @@ import { defineConfig } from "vite";
 import plugin from "@vitejs/plugin-react";
 
 export default defineConfig({
-    // Relative asset paths make the production build portable to
-    // GitHub Pages, static hosts, and subdirectory deployments.
-    base: "./",
+    // GitHub Pages project URL:
+    // https://jvertuss.github.io/Grid-Gauntlet/
+    base: "/Grid-Gauntlet/",
 
     plugins: [
         plugin(),
