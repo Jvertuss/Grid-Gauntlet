@@ -1,34 +1,73 @@
 # Gridiron Gauntlet
 
-Gridiron Gauntlet is a fantasy football game I made where you build a roster,
-go through randomized NFL weeks, make trades, get random perks, and try to
-build the best team possible.
+Gridiron Gauntlet is a historical fantasy-football strategy game built with React and Vite.
 
-I wanted to make something that mixes fantasy football with a little bit of
-luck and strategy instead of it just being another stats website.
+## Run locally
 
-## Features
+```bash
+npm install
+npm run dev
+```
 
-- Build a full fantasy football roster
-- Random NFL seasons and weeks
-- Player stats based on real NFL data
-- Random perks and legendary drops
-- Trade Market
-- Division Rival perk
-- Random opponent generation
-- Player swapping and roster management
-- Different strategies depending on the players and perks you get
+## Production build
 
-## How To Play
+```bash
+npm run build
+npm run preview
+```
 
-Build your team, survive each randomized week, and keep improving your roster
-through trades and perks. Your goal is to put together the strongest team you
-can before facing your opponent.
+The Vite configuration uses relative production asset paths so the `dist` folder can be deployed to common static hosts and subdirectory-based hosts such as GitHub Pages.
 
-## Built With
+## Legal and privacy pages
 
-- React
-- JavaScript
-- Vite
-- CSS
-- NFL player data
+The main menu includes built-in pages for:
+
+- Privacy Policy
+- Terms of Service
+- Sports & Liability Disclaimer
+- Open-Source Licenses
+
+Legal text is stored in `src/data/legalContent.js` and rendered by `src/components/LegalPage.jsx`.
+
+### Replace these placeholders before public launch
+
+Open `src/data/legalContent.js` and replace:
+
+- `[ADD CONTACT EMAIL BEFORE PUBLIC LAUNCH]`
+- `[ADD HOSTING PROVIDER BEFORE PUBLIC LAUNCH]`
+- `[ADD STATE / COUNTRY BEFORE PUBLIC LAUNCH]`
+
+The policies should be reviewed again any time accounts, analytics, advertising, payments, cloud saves, user-generated content, or other data-collection features are added.
+
+## Current privacy behavior
+
+The current game stores Hall of Fame run history in browser `localStorage` and bounds that history to 25 runs. The repository also contains optional historical-stat caching code. Player headshots and team logos can load from third-party sports image hosts.
+
+The HTML includes a restrictive referrer policy and a Content Security Policy covering the current asset and data hosts. External profile links use `noopener noreferrer` and a no-referrer policy.
+
+## Third-party software
+
+Direct dependencies include React and React DOM. Development tooling includes Vite, `@vitejs/plugin-react`, and Oxlint. See:
+
+- `THIRD_PARTY_NOTICES.md`
+- `public/third-party-licenses.txt`
+
+for the detected dependency list and available license notices.
+
+## Security notes
+
+- Do not place API keys, passwords, tokens, or other secrets in client-side source files.
+- Keep dependencies updated and run `npm run lint` and `npm run build` before deployment.
+- If the hosting platform supports security headers, prefer configuring CSP, Referrer-Policy, Permissions-Policy, and clickjacking protections as HTTP response headers in addition to the HTML policy.
+
+## Browser app / PWA build
+
+This edition can also run as an installable browser app without changing the game's UI or gameplay.
+
+```bash
+npm run dev:browser
+npm run build:browser
+npm run preview:browser
+```
+
+See `BROWSER_APP.md` for deployment and installation details.

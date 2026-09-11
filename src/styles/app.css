@@ -1,0 +1,6282 @@
+﻿/* =========================================================
+   GRIDIRON GAUNTLET
+   APP.CSS
+   ========================================================= */
+
+
+/* =========================================================
+   APP FOUNDATION
+   ========================================================= */
+
+.App {
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    color: #ffffff;
+    background: radial-gradient( circle at top center, rgba(255, 101, 0, 0.045), transparent 30% ), linear-gradient( 180deg, #0a0c10 0%, #080a0e 100% );
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   DRAFT TOP BAR
+   ========================================================= */
+
+.draft-topbar {
+    width: 100%;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(8, 10, 14, 0.97);
+}
+
+
+.draft-brand {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ff6500;
+    border-radius: 7px;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 950;
+}
+
+
+/* =========================================================
+   DRAFT SCREEN
+   ========================================================= */
+
+.draft-screen {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 42px 20px 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================================
+   DRAFT HEADING
+   ========================================================= */
+
+.draft-heading {
+    width: 100%;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+
+    .draft-heading h2 {
+        margin: 0;
+        color: #ffffff;
+        font-size: clamp( 36px, 4vw, 54px );
+        line-height: 1;
+        font-weight: 950;
+        letter-spacing: -2px;
+    }
+
+
+        .draft-heading h2 span {
+            color: #ff6500;
+        }
+
+
+/* =========================================================
+   DRAFT PROGRESS
+   ========================================================= */
+
+.draft-progress {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #858c99;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+    .draft-progress strong {
+        color: #ff6500;
+    }
+
+
+.draft-diamonds {
+    display: flex;
+    gap: 3px;
+}
+
+
+.draft-diamond {
+    color: #303642;
+    font-size: 12px;
+}
+
+
+    .draft-diamond.active {
+        color: #ff6500;
+    }
+
+
+/* =========================================================
+   DRAFT BOARD
+   ========================================================= */
+
+.draft-board {
+    width: min( 1000px, 100% );
+    display: grid;
+    grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
+    gap: 18px;
+    align-items: start;
+}
+
+
+/* =========================================================
+   DRAFT COLUMN
+   ========================================================= */
+
+.draft-position-column {
+    min-width: 0;
+}
+
+
+.draft-position-title {
+    position: relative;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 950;
+}
+
+
+    .draft-position-title::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 27px;
+        height: 3px;
+        transform: translateX(-50%);
+        border-radius: 99px;
+        background: #ff6500;
+    }
+
+
+.draft-position-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+}
+
+
+/* =========================================================
+   DRAFT ACTIONS
+   ========================================================= */
+
+.draft-actions {
+    width: 100%;
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.draft-lock-button,
+.draft-start-button,
+.draft-edit-button {
+    min-width: 165px;
+    min-height: 42px;
+    padding: 0 22px;
+    border-radius: 7px;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 950;
+    letter-spacing: 0.9px;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+
+.draft-lock-button,
+.draft-start-button {
+    border: none;
+    background: linear-gradient( 135deg, #ff7900, #ff4f00 );
+    box-shadow: 0 7px 20px rgba(255, 90, 0, 0.22);
+}
+
+
+    .draft-lock-button:not(:disabled):hover,
+    .draft-start-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(255, 90, 0, 0.32);
+    }
+
+
+    .draft-lock-button:disabled {
+        opacity: 0.30;
+        cursor: not-allowed;
+    }
+
+
+.draft-edit-button {
+    border: 1px solid #383e49;
+    background: #171b22;
+    color: #b9c0ca;
+}
+
+
+    .draft-edit-button:hover {
+        transform: translateY(-2px);
+        border-color: #555d69;
+        background: #20252d;
+    }
+
+
+.draft-confirmed-actions {
+    display: flex;
+    gap: 12px;
+}
+
+
+.draft-warning {
+    margin-top: 15px;
+    color: #9199a5;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   MAIN TOP BAR
+   ========================================================= */
+
+.topBar {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+    background: rgba(8, 10, 14, 0.97);
+}
+
+
+.topBarInner {
+    width: min( 1500px, calc(100% - 36px) );
+    min-height: 64px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+    .brand .logo {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        border: 1px solid #ff6500;
+        border-radius: 7px;
+        background: #11141a;
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 950;
+    }
+
+
+    .brand h2 {
+        margin: 0;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 950;
+    }
+
+
+/* =========================================================
+   TOP BAR CONTROLS
+   ========================================================= */
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #d7dae0;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+
+.round-header-record {
+    color: #ff6500;
+}
+
+
+.round-header-perks {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   ROUND HERO
+   ========================================================= */
+
+.round-hero {
+    width: min( 1500px, calc(100% - 32px) );
+    margin: 0 auto;
+    padding: 22px 0 18px;
+    text-align: center;
+}
+
+
+.round-kicker {
+    color: #ff6500;
+    font-size: 9px;
+    font-weight: 950;
+    letter-spacing: 1.4px;
+}
+
+
+.round-hero h1 {
+    margin: 4px 0 5px;
+    color: #ffffff;
+    font-size: clamp( 34px, 4vw, 43px );
+    line-height: 1;
+    font-weight: 950;
+    letter-spacing: -1.6px;
+}
+
+
+.round-hero p {
+    max-width: 730px;
+    margin: 0 auto;
+    color: #858d99;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   ROUND SCORE
+   ========================================================= */
+
+.round-category-score {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #858c99;
+    font-size: 9px;
+    font-weight: 900;
+}
+
+
+    .round-category-score strong {
+        color: #ffffff;
+        font-size: 18px;
+    }
+
+
+.round-category-score-vs {
+    color: #ff6500;
+}
+
+
+/* =========================================================
+   ROUND LAYOUT
+   ========================================================= */
+
+.round-layout {
+    width: min( 1500px, calc(100% - 30px) );
+    margin: 0 auto;
+    padding-bottom: 55px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 205px minmax( 0, 1fr ) 205px;
+    gap: 18px;
+    align-items: start;
+}
+
+
+/* =========================================================
+   SIDE PANELS
+   ========================================================= */
+
+.round-roster-panel,
+.round-opponent-panel {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px;
+    border: 1px solid #2c323c;
+    border-radius: 12px;
+    background: linear-gradient( 145deg, #151920, #0e1116 );
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+}
+
+
+/* =========================================================
+   SIDE PANEL HEADINGS
+   ========================================================= */
+
+.round-panel-heading {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+
+    .round-panel-heading span {
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: 950;
+        letter-spacing: 0.6px;
+    }
+
+
+    .round-panel-heading small {
+        color: #747c89;
+        font-size: 6px;
+        font-weight: 850;
+    }
+
+
+/* =========================================================
+   SIDE CARD STACKS
+   ========================================================= */
+
+.round-roster-cards,
+.round-opponent-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+}
+
+
+.round-roster-card-wrap,
+.round-opponent-card-wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+    /* =========================================================
+   LARGE SIDE PLAYER CARDS
+   ========================================================= */
+
+    .round-roster-card-wrap
+    .player-card,
+    .round-opponent-card-wrap
+    .player-card {
+        width: 176px !important;
+        height: 202px !important;
+        padding: 12px 10px 10px !important;
+        border-radius: 12px !important;
+    }
+
+
+    /* =========================================================
+   SIDE HEADSHOTS
+   ========================================================= */
+
+    .round-roster-card-wrap
+    .player-card-headshot-wrap,
+    .round-opponent-card-wrap
+    .player-card-headshot-wrap {
+        width: 62px !important;
+        height: 62px !important;
+        min-width: 62px !important;
+        min-height: 62px !important;
+        margin-bottom: 6px !important;
+    }
+
+
+    /* =========================================================
+   SIDE NAMES
+   ========================================================= */
+
+    .round-roster-card-wrap
+    .player-card-name,
+    .round-opponent-card-wrap
+    .player-card-name {
+        font-size: 13px !important;
+        line-height: 15px !important;
+    }
+
+
+    /* =========================================================
+   SIDE META
+   ========================================================= */
+
+    .round-roster-card-wrap
+    .player-card-meta,
+    .round-opponent-card-wrap
+    .player-card-meta {
+        margin-top: 3px !important;
+        gap: 4px !important;
+        font-size: 7px !important;
+        line-height: 8px !important;
+    }
+
+
+    /* =========================================================
+   SIDE LOGOS
+   ========================================================= */
+
+    .round-roster-card-wrap
+    .player-card-logo-wrap,
+    .round-opponent-card-wrap
+    .player-card-logo-wrap {
+        width: 25px !important;
+        height: 25px !important;
+        top: 8px !important;
+        right: 8px !important;
+    }
+
+
+    /* =========================================================
+   SIDE STATS
+   ========================================================= */
+
+    .round-roster-card-wrap
+    .player-card-bottom,
+    .round-opponent-card-wrap
+    .player-card-bottom {
+        gap: 7px !important;
+    }
+
+
+    .round-roster-card-wrap
+    .player-card-stat-box,
+    .round-opponent-card-wrap
+    .player-card-stat-box {
+        min-height: 43px !important;
+        padding: 5px 4px !important;
+        border-radius: 7px !important;
+    }
+
+
+        .round-roster-card-wrap
+        .player-card-stat-box strong,
+        .round-opponent-card-wrap
+        .player-card-stat-box strong {
+            font-size: 15px !important;
+            line-height: 16px !important;
+            font-weight: 950 !important;
+        }
+
+
+        .round-roster-card-wrap
+        .player-card-stat-box
+        .player-card-fp,
+        .round-opponent-card-wrap
+        .player-card-stat-box
+        .player-card-fp {
+            font-size: 17px !important;
+            line-height: 18px !important;
+        }
+
+
+        .round-roster-card-wrap
+        .player-card-stat-box span,
+        .round-opponent-card-wrap
+        .player-card-stat-box span {
+            margin-top: 3px !important;
+            font-size: 5px !important;
+            line-height: 6px !important;
+        }
+
+
+    /* =========================================================
+   SIDE SELECTED CHECK
+   ========================================================= */
+
+    .round-roster-card-wrap
+    .player-card-selected-check {
+        width: 22px !important;
+        height: 22px !important;
+        top: 8px !important;
+        left: 8px !important;
+        font-size: 12px !important;
+    }
+
+
+/* =========================================================
+   SIDE POSITION LABEL
+   ========================================================= */
+
+.round-roster-position {
+    align-self: flex-start;
+    margin: 0 0 4px 3px;
+    color: #7c8491;
+    font-size: 7px;
+    font-weight: 950;
+}
+
+
+/* =========================================================
+   CPU NUMBER
+   ========================================================= */
+
+.round-opponent-number {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    z-index: 40;
+    color: #79818e;
+    font-size: 7px;
+    font-weight: 950;
+}
+
+
+/* =========================================================
+   PLACED PLAYER
+   ========================================================= */
+
+.round-roster-card-used {
+    opacity: 0.34;
+    filter: saturate(0.65);
+}
+
+
+.round-player-used {
+    margin-top: 4px;
+    color: #727a87;
+    font-size: 6px;
+    font-weight: 950;
+    letter-spacing: 0.7px;
+}
+
+
+/* =========================================================
+   ROUND BOARD
+   ========================================================= */
+
+.round-board {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   BOARD HEADING
+   ========================================================= */
+
+.round-board-heading {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+
+    .round-board-heading h2 {
+        margin: 0;
+        color: #ffffff;
+        font-size: 23px;
+        font-weight: 950;
+        letter-spacing: -0.5px;
+    }
+
+
+    .round-board-heading p {
+        margin: 4px 0 0;
+        color: #858d99;
+        font-size: 8px;
+        line-height: 1.4;
+    }
+
+
+/* =========================================================
+   ROUND BUTTON GROUP
+   ========================================================= */
+
+.round-lineup-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   AUTO LINEUP
+   ========================================================= */
+
+.round-auto-lineup-button {
+    min-width: 125px;
+}
+
+
+/* =========================================================
+   LOCK LINEUP
+   ========================================================= */
+
+.round-lock-lineup-button {
+    min-width: 125px;
+    min-height: 38px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 7px;
+    background: linear-gradient( 135deg, #ff7900, #ff4f00 );
+    color: #ffffff;
+    font-size: 8px;
+    font-weight: 950;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    box-shadow: 0 7px 18px rgba(255, 90, 0, 0.18);
+    transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+
+    .round-lock-lineup-button:not(:disabled):hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(255, 90, 0, 0.30);
+    }
+
+
+    .round-lock-lineup-button:disabled {
+        opacity: 0.27;
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+
+
+/* =========================================================
+   CLEAR LINEUP
+   ========================================================= */
+
+.round-clear-lineup-button {
+    min-width: 75px;
+    min-height: 38px;
+    padding: 0 13px;
+    border: 1px solid #3b424d;
+    border-radius: 7px;
+    background: #171b21;
+    color: #969eaa;
+    font-size: 8px;
+    font-weight: 950;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+
+    .round-clear-lineup-button:not(:disabled):hover {
+        transform: translateY(-2px);
+        border-color: #ff6500;
+        color: #ffffff;
+        background: rgba(255, 101, 0, 0.06);
+    }
+
+
+    .round-clear-lineup-button:disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+    }
+
+
+/* =========================================================
+   =========================================================
+   COMPACT BATTLE SYSTEM
+   =========================================================
+   ========================================================= */
+
+
+/* =========================================================
+   VERTICAL BATTLE LIST
+   ========================================================= */
+
+.round-week-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* =========================================================
+   BATTLE CONTAINER
+   ========================================================= */
+
+.round-week-category {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid #303641;
+    border-radius: 11px;
+    background: radial-gradient( circle at top center, rgba(255, 101, 0, 0.025), transparent 65% ), linear-gradient( 145deg, #15181f, #0f1217 );
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.16);
+    transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+
+/* =========================================================
+   BATTLE HEADER
+   ========================================================= */
+
+.round-week-category-header {
+    width: 100%;
+    min-height: 41px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+
+/* =========================================================
+   WEEK TITLE
+   ========================================================= */
+
+.battle-week-title {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+
+    .battle-week-title span {
+        color: #737b88;
+        font-size: 6px;
+        font-weight: 950;
+        letter-spacing: 0.9px;
+    }
+
+
+    .battle-week-title strong {
+        color: #ff6500;
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: 950;
+    }
+
+
+/* =========================================================
+   EMPTY WEEK
+   ========================================================= */
+
+.round-week-empty {
+    min-height: 0;
+}
+
+
+.round-battle-empty {
+    width: 100%;
+    min-height: 69px;
+    padding: 11px 18px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.006);
+}
+
+
+/* =========================================================
+   EMPTY PLUS
+   ========================================================= */
+
+.battle-empty-plus {
+    color: rgba(255, 101, 0, 0.58);
+    font-size: 23px;
+    line-height: 23px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   EMPTY TEXT
+   ========================================================= */
+
+.battle-empty-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+
+    .battle-empty-copy strong {
+        color: #7e8693;
+        font-size: 8px;
+        font-weight: 950;
+        letter-spacing: 0.5px;
+    }
+
+
+    .battle-empty-copy span {
+        color: #555d69;
+        font-size: 6px;
+        font-weight: 750;
+    }
+
+
+/* =========================================================
+   SELECTED PLAYER PREVIEW ROW
+   ========================================================= */
+
+.round-battle-preview {
+    width: 100%;
+    min-height: 87px;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax( 180px, 1fr ) 55px minmax( 140px, 0.72fr ) 115px;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    color: #ffffff;
+    text-align: left;
+}
+
+
+/* =========================================================
+   PLAYABLE WEEK
+   ========================================================= */
+
+.round-battle-playable {
+    cursor: pointer;
+    background: radial-gradient( circle at 50% 50%, rgba(255, 101, 0, 0.055), transparent 65% );
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+
+    .round-battle-playable:hover {
+        background: radial-gradient( circle at 50% 50%, rgba(255, 101, 0, 0.12), transparent 67% );
+        box-shadow: inset 0 0 0 1px rgba(255, 101, 0, 0.42);
+    }
+
+
+/* =========================================================
+   UNAVAILABLE WEEK
+   ========================================================= */
+
+.round-battle-unavailable {
+    opacity: 0.38;
+    background: rgba(255, 255, 255, 0.006);
+}
+
+
+/* =========================================================
+   BATTLE AVATAR
+   ========================================================= */
+
+.battle-player-avatar {
+    position: relative;
+    width: 51px;
+    height: 51px;
+    min-width: 51px;
+    min-height: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 2px solid var( --battle-accent, #ff6500 );
+    border-radius: 50%;
+    background: #20252d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.38), 0 0 12px color-mix( in srgb, var( --battle-accent, #ff6500 ) 20%, transparent );
+}
+
+
+    .battle-player-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+
+.battle-player-avatar-fallback {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 950;
+}
+
+
+/* =========================================================
+   PLAYER INFO
+   ========================================================= */
+
+.battle-preview-player,
+.battle-assigned-player {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+
+.battle-player-copy {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+
+    .battle-player-copy strong {
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #ffffff;
+        font-size: 13px;
+        line-height: 15px;
+        font-weight: 950;
+    }
+
+
+    .battle-player-copy > span:not(.battle-small-label) {
+        color: #808895;
+        font-size: 7px;
+        line-height: 9px;
+        font-weight: 850;
+    }
+
+
+.battle-small-label {
+    color: #616a77 !important;
+    font-size: 6px !important;
+    line-height: 7px !important;
+    font-weight: 950 !important;
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   VS
+   ========================================================= */
+
+.battle-preview-vs,
+.battle-assigned-vs {
+    text-align: center;
+    color: #ff6500;
+    font-size: 10px;
+    font-weight: 950;
+}
+
+
+    .battle-assigned-vs span {
+        color: #ff6500;
+        font-size: 11px;
+        font-weight: 950;
+    }
+
+
+/* =========================================================
+   OPPONENT PREVIEW
+   ========================================================= */
+
+.battle-preview-opponent,
+.battle-assigned-opponent {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+
+    .battle-preview-opponent img,
+    .battle-assigned-opponent img {
+        width: 43px;
+        height: 43px;
+        min-width: 43px;
+        object-fit: contain;
+    }
+
+
+    .battle-preview-opponent > div,
+    .battle-assigned-opponent > div {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+
+    .battle-preview-opponent span {
+        color: #626a76;
+        font-size: 6px;
+        font-weight: 950;
+        letter-spacing: 0.8px;
+    }
+
+
+    .battle-preview-opponent strong,
+    .battle-assigned-opponent strong {
+        color: #ffffff;
+        font-size: 12px;
+        line-height: 14px;
+        font-weight: 950;
+    }
+
+
+/* =========================================================
+   PLACE HERE
+   ========================================================= */
+
+.battle-place-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    color: #ff6500;
+}
+
+
+    .battle-place-action span {
+        font-size: 7px;
+        font-weight: 950;
+        letter-spacing: 0.7px;
+    }
+
+
+    .battle-place-action strong {
+        font-size: 18px;
+    }
+
+
+/* =========================================================
+   NO GAME
+   ========================================================= */
+
+.battle-no-game {
+    grid-column: 3 / 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+
+    .battle-no-game strong {
+        color: #777f8a;
+        font-size: 9px;
+        font-weight: 950;
+    }
+
+
+    .battle-no-game span {
+        color: #505762;
+        font-size: 6px;
+        font-weight: 850;
+    }
+
+
+/* =========================================================
+   ASSIGNED BATTLE
+   ========================================================= */
+
+.round-week-assigned {
+    border-color: rgba(255, 101, 0, 0.30);
+}
+
+
+.round-battle-assigned {
+    width: 100%;
+    min-height: 104px;
+    padding: 13px 16px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax( 190px, 1fr ) 60px minmax( 140px, 0.72fr ) 140px;
+    align-items: center;
+    gap: 13px;
+    background: radial-gradient( circle at 50% 50%, rgba(255, 101, 0, 0.04), transparent 65% );
+}
+
+
+/* =========================================================
+   OPPONENT PLACEHOLDER
+   ========================================================= */
+
+.battle-opponent-placeholder {
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #20242b;
+    color: #626a76;
+    font-size: 16px;
+    font-weight: 950;
+}
+
+
+/* =========================================================
+   READY STATUS
+   ========================================================= */
+
+.battle-assigned-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+}
+
+
+    .battle-assigned-status span {
+        color: #37c978;
+        font-size: 8px;
+        font-weight: 950;
+        letter-spacing: 0.9px;
+    }
+
+
+    .battle-assigned-status small {
+        color: #626a76;
+        font-size: 6px;
+        font-weight: 750;
+    }
+
+
+/* =========================================================
+   CHANGE BUTTON
+   ========================================================= */
+
+.battle-change-button {
+    min-height: 27px;
+    padding: 0 10px;
+    border: 1px solid #373d47;
+    border-radius: 5px;
+    background: #171a20;
+    color: #969eaa;
+    font-size: 6px;
+    font-weight: 950;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+
+    .battle-change-button:hover {
+        color: #ffffff;
+        border-color: #ff6500;
+        background: rgba(255, 101, 0, 0.05);
+    }
+
+
+/* =========================================================
+   RESOLVED BATTLE
+   ========================================================= */
+
+.round-week-resolved {
+    min-height: 0;
+}
+
+
+.round-battle-result {
+    width: 100%;
+    min-height: 142px;
+    padding: 16px 22px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax( 0, 1fr ) 120px minmax( 0, 1fr );
+    gap: 20px;
+    align-items: center;
+}
+
+
+/* =========================================================
+   RESULT PLAYER
+   ========================================================= */
+
+.battle-result-player {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px 18px;
+}
+
+
+.battle-result-side-label {
+    grid-column: 1 / -1;
+    color: #686f7a;
+    font-size: 6px;
+    font-weight: 950;
+    letter-spacing: 1px;
+}
+
+
+.battle-result-player-info {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+    .battle-result-player-info > div:last-child {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+
+    .battle-result-player-info strong {
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #ffffff;
+        font-size: 13px;
+        line-height: 15px;
+        font-weight: 950;
+    }
+
+
+    .battle-result-player-info span {
+        color: #7b8390;
+        font-size: 7px;
+        font-weight: 850;
+    }
+
+
+/* =========================================================
+   RESULT SCORE
+   ========================================================= */
+
+.battle-result-score {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    color: #ffffff;
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 950;
+}
+
+
+    .battle-result-score small {
+        color: #717986;
+        font-size: 7px;
+        font-weight: 950;
+    }
+
+
+/* =========================================================
+   RESULT CENTER
+   ========================================================= */
+
+.battle-result-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-align: center;
+}
+
+
+    .battle-result-center span {
+        color: #ff6500;
+        font-size: 9px;
+        font-weight: 950;
+    }
+
+
+    .battle-result-center strong {
+        color: #ffffff;
+        font-size: 11px;
+        line-height: 13px;
+        font-weight: 950;
+    }
+
+
+/* =========================================================
+   RESULT COLORS
+   ========================================================= */
+
+.category-user-won {
+    border-color: rgba(48, 201, 117, 0.58);
+    box-shadow: 0 0 22px rgba(48, 201, 117, 0.07);
+}
+
+
+    .category-user-won
+    .battle-result-user
+    .battle-result-score {
+        color: #3ed17f;
+    }
+
+
+.category-cpu-won {
+    border-color: rgba(244, 71, 71, 0.58);
+    box-shadow: 0 0 22px rgba(244, 71, 71, 0.07);
+}
+
+
+    .category-cpu-won
+    .battle-result-cpu
+    .battle-result-score {
+        color: #ff5757;
+    }
+
+
+.category-tied {
+    border-color: rgba(255, 180, 60, 0.60);
+}
+
+
+/* =========================================================
+   ROUND RESULT PANEL
+   ========================================================= */
+
+.round-result-panel {
+    margin-top: 16px;
+    padding: 20px;
+    border: 1px solid #343a44;
+    border-radius: 12px;
+    background: radial-gradient( circle at top center, rgba(255, 101, 0, 0.04), transparent 60% ), linear-gradient( 145deg, #171a20, #101318 );
+    text-align: center;
+}
+
+
+.round-result-win {
+    border-color: rgba(48, 201, 117, 0.45);
+}
+
+
+.round-result-loss {
+    border-color: rgba(244, 71, 71, 0.45);
+}
+
+
+.round-result-eyebrow {
+    color: #ff6500;
+    font-size: 8px;
+    font-weight: 950;
+    letter-spacing: 1px;
+}
+
+
+.round-result-panel h2 {
+    margin: 5px 0 11px;
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: 950;
+}
+
+
+.round-result-totals {
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+}
+
+
+    .round-result-totals div {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+
+    .round-result-totals span {
+        color: #7e8693;
+        font-size: 7px;
+        font-weight: 950;
+    }
+
+
+    .round-result-totals strong {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 950;
+    }
+
+
+/* =========================================================
+   CLAIM / END BUTTON
+   ========================================================= */
+
+.round-next-button {
+    margin-top: 17px;
+    min-height: 42px;
+    padding: 0 22px;
+    border: none;
+    border-radius: 7px;
+    background: linear-gradient( 135deg, #ff7900, #ff4f00 );
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 950;
+    letter-spacing: 0.9px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+
+    .round-next-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 101, 0, 0.25);
+    }
+
+
+/* =========================================================
+   =========================================================
+   PERK PAGE
+   =========================================================
+   ========================================================= */
+
+.perk-page {
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   PERK SCREEN
+   ========================================================= */
+
+.perk-screen {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 48px 42px 80px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================================
+   PERK HEADING
+   ========================================================= */
+
+.perk-screen-heading {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+
+.perk-reward-kicker {
+    display: block;
+    margin-bottom: 7px;
+    color: #ff6500;
+    font-size: 11px;
+    font-weight: 950;
+    letter-spacing: 1.5px;
+}
+
+
+.perk-screen-heading h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp( 36px, 4vw, 56px );
+    line-height: 1;
+    font-weight: 950;
+    letter-spacing: -1.6px;
+}
+
+
+.perk-screen-heading p {
+    max-width: 680px;
+    margin: 12px auto 0;
+    color: #9aa2ae;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   THREE PERKS
+   ========================================================= */
+
+.perk-reward-grid {
+    width: min( 1000px, 100% );
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
+    gap: 24px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+
+    /* =========================================================
+   PERK CARD OVERRIDE
+   ========================================================= */
+
+    .perk-reward-grid
+    .perk-card {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        height: 350px;
+        margin: 0 !important;
+        box-sizing: border-box;
+    }
+
+
+        .perk-reward-grid
+        .perk-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 101, 0, 0.60);
+            box-shadow: 0 13px 32px rgba(0, 0, 0, 0.34), 0 0 20px rgba(255, 101, 0, 0.09);
+        }
+
+
+/* =========================================================
+   PERK SECTION HEADING
+   ========================================================= */
+
+.perk-section-heading {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+
+    .perk-section-heading h3 {
+        margin: 0 0 8px;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 950;
+        letter-spacing: -0.4px;
+    }
+
+
+    .perk-section-heading p {
+        max-width: 700px;
+        margin: 0 auto;
+        color: #969eaa;
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+
+/* =========================================================
+   PERK PLAYER GRID
+   ========================================================= */
+
+.perk-player-grid {
+    width: 100%;
+    max-width: 1380px;
+    margin: 0 auto 34px;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax( 180px, 190px ) );
+    justify-content: center;
+    align-items: start;
+    gap: 24px 20px;
+}
+
+
+    .perk-player-grid
+    .player-card {
+        width: 190px;
+        max-width: 100%;
+    }
+
+
+    .perk-player-grid
+    .player-card-clickable:hover {
+        transform: translateY(-5px);
+    }
+
+
+/* =========================================================
+   TRADE DISPLAY
+   ========================================================= */
+
+.perk-trade-current {
+    width: min( 880px, 100% );
+    margin: 0 auto 34px;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    background: radial-gradient( circle at top center, rgba(255, 101, 0, 0.04), transparent 60% ), linear-gradient( 145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012) );
+}
+
+
+    .perk-trade-current > span {
+        color: #ff6500;
+        font-size: 10px;
+        font-weight: 950;
+        letter-spacing: 1px;
+    }
+
+
+    .perk-trade-current > strong {
+        color: #ff6500;
+        font-size: 30px;
+        font-weight: 950;
+    }
+
+
+    .perk-trade-current > p {
+        margin: 0;
+        color: #a5adb8;
+        font-size: 12px;
+        font-weight: 850;
+        line-height: 1.6;
+    }
+
+
+/* =========================================================
+   PERK EMPTY STATE
+   ========================================================= */
+
+.perk-empty-state {
+    width: min( 650px, 100% );
+    margin: 10px auto 30px;
+    padding: 26px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+
+    .perk-empty-state p {
+        margin: 0;
+        color: #9da5b1;
+        font-size: 13px;
+    }
+
+
+/* =========================================================
+   BACK TO PERKS
+   ========================================================= */
+
+.perk-back-button {
+    margin-top: 10px;
+    min-height: 42px;
+    padding: 0 22px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 101, 0, 0.45);
+    background: rgba(255, 101, 0, 0.08);
+    color: #ff7319;
+    font-size: 10px;
+    font-weight: 950;
+    letter-spacing: 0.7px;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+
+    .perk-back-button:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 101, 0, 0.15);
+        border-color: rgba(255, 101, 0, 0.75);
+    }
+
+
+/* =========================================================
+   HALL OF FAME
+   ========================================================= */
+
+.gauntlet-page
+.hall-of-fame {
+    margin-top: 40px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media ( min-width: 1600px ) {
+
+    .round-layout {
+        grid-template-columns: 220px minmax( 0, 1fr ) 220px;
+    }
+
+
+    .round-roster-card-wrap
+    .player-card,
+    .round-opponent-card-wrap
+    .player-card {
+        width: 188px !important;
+        height: 210px !important;
+    }
+
+
+    .perk-reward-grid {
+        max-width: 1050px;
+    }
+
+
+    .perk-screen {
+        padding-top: 60px;
+    }
+}
+
+
+/* =========================================================
+   MEDIUM DESKTOP
+   ========================================================= */
+
+@media ( max-width: 1250px ) {
+
+    .round-layout {
+        grid-template-columns: 175px minmax( 0, 1fr ) 175px;
+        gap: 13px;
+    }
+
+
+    .round-roster-card-wrap
+    .player-card,
+    .round-opponent-card-wrap
+    .player-card {
+        width: 150px !important;
+        height: 185px !important;
+    }
+
+
+    .round-roster-card-wrap
+    .player-card-headshot-wrap,
+    .round-opponent-card-wrap
+    .player-card-headshot-wrap {
+        width: 54px !important;
+        height: 54px !important;
+        min-width: 54px !important;
+        min-height: 54px !important;
+    }
+
+
+    .round-battle-preview,
+    .round-battle-assigned {
+        grid-template-columns: minmax( 160px, 1fr ) 45px minmax( 120px, 0.65fr ) 100px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media ( max-width: 930px ) {
+
+    .topBarInner {
+        width: calc(100% - 24px);
+    }
+
+
+    .round-layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .round-roster-panel {
+        width: 100%;
+        order: 1;
+    }
+
+
+    .round-board {
+        width: 100%;
+        order: 2;
+    }
+
+
+    .round-opponent-panel {
+        width: 100%;
+        order: 3;
+    }
+
+
+    .round-roster-cards,
+    .round-opponent-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .round-roster-card-wrap,
+    .round-opponent-card-wrap {
+        width: auto;
+    }
+
+
+    .round-battle-preview,
+    .round-battle-assigned {
+        grid-template-columns: minmax( 160px, 1fr ) 45px minmax( 130px, 1fr );
+    }
+
+
+    .battle-place-action,
+    .battle-assigned-status {
+        grid-column: 1 / -1;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    .round-battle-result {
+        grid-template-columns: 1fr;
+    }
+
+
+    .battle-result-center {
+        padding: 9px 0;
+    }
+
+
+    .draft-board {
+        grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+    }
+
+
+    .perk-screen {
+        padding: 38px 24px 65px;
+    }
+
+
+    .perk-reward-grid {
+        width: min( 680px, 100% );
+        grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+    }
+
+
+        .perk-reward-grid
+        .perk-card:last-child {
+            grid-column: 1 / -1;
+            width: min( 320px, 100% ) !important;
+            justify-self: center;
+        }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media ( max-width: 720px ) {
+
+    .brand h2 {
+        font-size: 15px;
+    }
+
+
+    .controls {
+        gap: 8px;
+        font-size: 9px;
+    }
+
+
+    .round-hero h1 {
+        font-size: 32px;
+    }
+
+
+    .round-board-heading {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .round-lineup-actions {
+        justify-content: stretch;
+    }
+
+
+    .round-lock-lineup-button,
+    .round-clear-lineup-button {
+        flex: 1;
+    }
+
+
+    .round-battle-preview,
+    .round-battle-assigned {
+        grid-template-columns: 1fr;
+    }
+
+
+    .battle-preview-player,
+    .battle-assigned-player,
+    .battle-preview-opponent,
+    .battle-assigned-opponent {
+        justify-content: center;
+    }
+
+
+    .battle-preview-vs,
+    .battle-assigned-vs {
+        padding: 2px 0;
+    }
+
+
+    .battle-place-action {
+        justify-content: center;
+    }
+
+
+    .battle-assigned-status {
+        align-items: center;
+    }
+
+
+    .battle-no-game {
+        grid-column: auto;
+        align-items: center;
+    }
+
+
+    .perk-player-grid {
+        grid-template-columns: repeat( auto-fit, minmax( 165px, 175px ) );
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media ( max-width: 600px ) {
+
+    .topBarInner {
+        min-height: 58px;
+        flex-wrap: wrap;
+        padding: 8px 0;
+    }
+
+
+    .brand {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    .controls {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    .round-layout,
+    .round-hero {
+        width: calc(100% - 18px);
+    }
+
+
+    .round-hero {
+        padding-top: 17px;
+    }
+
+
+        .round-hero h1 {
+            font-size: 28px;
+        }
+
+
+    .round-board-heading {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .round-lineup-actions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+    }
+
+
+    .round-auto-lineup-button {
+        grid-column: 1 / -1;
+    }
+
+
+    .round-lock-lineup-button,
+    .round-clear-lineup-button {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    .round-week-category-header {
+        min-height: 38px;
+    }
+
+
+    .round-battle-empty {
+        min-height: 64px;
+    }
+
+
+    .round-battle-preview,
+    .round-battle-assigned {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+
+    .battle-preview-player,
+    .battle-assigned-player {
+        justify-content: center;
+    }
+
+
+    .battle-preview-opponent,
+    .battle-assigned-opponent {
+        justify-content: center;
+    }
+
+
+    .battle-player-copy {
+        text-align: left;
+    }
+
+
+    .round-battle-result {
+        padding: 14px;
+        grid-template-columns: 1fr;
+    }
+
+
+    .battle-result-player {
+        grid-template-columns: 1fr auto;
+    }
+
+
+    .draft-board {
+        grid-template-columns: 1fr;
+    }
+
+
+    .draft-confirmed-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+
+    .draft-lock-button,
+    .draft-start-button,
+    .draft-edit-button {
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       PERKS MOBILE
+       ===================================================== */
+
+    .perk-screen {
+        padding: 28px 14px 55px;
+    }
+
+
+    .perk-screen-heading {
+        margin-bottom: 26px;
+    }
+
+
+        .perk-screen-heading h1 {
+            font-size: 31px;
+            letter-spacing: -1px;
+        }
+
+
+        .perk-screen-heading p {
+            font-size: 12px;
+        }
+
+
+    .perk-reward-grid {
+        width: min( 340px, 100% );
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+
+        .perk-reward-grid
+        .perk-card,
+        .perk-reward-grid
+        .perk-card:last-child {
+            width: 100% !important;
+            height: 310px;
+            grid-column: auto;
+        }
+
+
+    .perk-player-grid {
+        grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+        gap: 14px;
+    }
+
+
+        .perk-player-grid
+        .player-card {
+            width: 100%;
+            max-width: 165px;
+        }
+
+
+    .perk-trade-current {
+        flex-direction: column;
+        gap: 16px;
+        padding: 18px;
+    }
+
+
+    .perk-section-heading h3 {
+        font-size: 20px;
+    }
+
+
+    .perk-back-button {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media ( max-width: 390px ) {
+
+    .perk-player-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+        .perk-player-grid
+        .player-card {
+            width: 165px;
+            justify-self: center;
+        }
+
+
+    .round-result-totals {
+        gap: 18px;
+    }
+
+
+    .battle-result-score {
+        font-size: 24px;
+    }
+}
+/* =========================================================
+   =========================================================
+   WEEK POINTS STRATEGY UI
+   =========================================================
+   ========================================================= */
+
+
+/* =========================================================
+   POINTS WHILE SELECTING A WEEK
+   ========================================================= */
+
+.battle-preview-fantasy {
+    margin-top: 5px;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+
+    .battle-preview-fantasy strong {
+        color: var( --battle-accent, #ff6500 ) !important;
+        font-size: 18px !important;
+        line-height: 19px !important;
+        font-weight: 950 !important;
+        text-shadow: 0 0 10px color-mix( in srgb, var( --battle-accent, #ff6500 ) 35%, transparent );
+    }
+
+
+    .battle-preview-fantasy span {
+        color: #747c88 !important;
+        font-size: 6px !important;
+        line-height: 7px !important;
+        font-weight: 950 !important;
+        letter-spacing: 0.65px;
+    }
+
+
+/* =========================================================
+   MAKE PLAYABLE WEEKS EASIER TO SCAN
+   ========================================================= */
+
+.round-battle-playable {
+    border-left: 3px solid var( --battle-accent, #ff6500 ) !important;
+    background: radial-gradient( circle at 20% 50%, color-mix( in srgb, var( --battle-accent, #ff6500 ) 7%, transparent ), transparent 50% ), rgba( 255, 255, 255, 0.005 );
+}
+
+
+    .round-battle-playable:hover {
+        background: radial-gradient( circle at 20% 50%, color-mix( in srgb, var( --battle-accent, #ff6500 ) 14%, transparent ), transparent 55% ), rgba( 255, 255, 255, 0.008 );
+        box-shadow: inset 0 0 0 1px color-mix( in srgb, var( --battle-accent, #ff6500 ) 42%, transparent ), 0 0 14px color-mix( in srgb, var( --battle-accent, #ff6500 ) 10%, transparent );
+    }
+
+
+/* =========================================================
+   POINTS AFTER PLAYER IS PLACED
+   ========================================================= */
+
+.battle-assigned-fantasy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+
+    .battle-assigned-fantasy strong {
+        color: var( --battle-accent, #ff6500 );
+        font-size: 24px;
+        line-height: 25px;
+        font-weight: 950;
+        text-shadow: 0 0 12px color-mix( in srgb, var( --battle-accent, #ff6500 ) 30%, transparent );
+    }
+
+
+    .battle-assigned-fantasy span {
+        color: #747c88;
+        font-size: 6px;
+        line-height: 7px;
+        font-weight: 950;
+        letter-spacing: 0.75px;
+    }
+
+
+/* =========================================================
+   READY LABEL
+   ========================================================= */
+
+.battle-assigned-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+}
+
+
+    .battle-assigned-status > small {
+        color: #3ed17f;
+        font-size: 6px;
+        line-height: 7px;
+        font-weight: 950;
+        letter-spacing: 0.8px;
+    }
+
+
+/* =========================================================
+   ASSIGNED WEEK ACCENT
+   ========================================================= */
+
+.round-week-assigned {
+    border-color: color-mix( in srgb, var( --battle-accent, #ff6500 ) 42%, #303641 );
+    box-shadow: 0 7px 20px rgba( 0, 0, 0, 0.18 ), 0 0 12px color-mix( in srgb, var( --battle-accent, #ff6500 ) 7%, transparent );
+}
+
+
+/* =========================================================
+   NO GAME ROWS SHOULD BE OBVIOUSLY UNUSABLE
+   ========================================================= */
+
+.round-battle-unavailable {
+    opacity: 0.32;
+    filter: grayscale( 0.65 );
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   PLAYABLE WEEK SCORE EMPHASIS
+   ========================================================= */
+
+.round-battle-playable
+.battle-preview-fantasy {
+    padding: 3px 8px;
+    width: fit-content;
+    border-radius: 6px;
+    background: color-mix( in srgb, var( --battle-accent, #ff6500 ) 7%, transparent );
+    border: 1px solid color-mix( in srgb, var( --battle-accent, #ff6500 ) 15%, transparent );
+}
+
+
+/* =========================================================
+   ASSIGNED SCORE BOX
+   ========================================================= */
+
+.battle-assigned-fantasy {
+    min-width: 72px;
+    padding: 7px 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: color-mix( in srgb, var( --battle-accent, #ff6500 ) 6%, rgba( 255, 255, 255, 0.01 ) );
+    border: 1px solid color-mix( in srgb, var( --battle-accent, #ff6500 ) 14%, transparent );
+}
+
+
+/* =========================================================
+   MOBILE POINTS
+   ========================================================= */
+
+@media ( max-width: 720px ) {
+
+    .battle-preview-fantasy {
+        justify-content: flex-start;
+    }
+
+
+        .battle-preview-fantasy strong {
+            font-size: 20px !important;
+            line-height: 21px !important;
+        }
+
+
+    .battle-assigned-status {
+        align-items: center;
+    }
+
+
+    .battle-assigned-fantasy {
+        align-items: center;
+    }
+}
+
+/* =========================================================
+   BLIND WEEKS
+   Added on top of the original layout only.
+   ========================================================= */
+
+.round-week-blind {
+    border-color: rgba(143, 95, 255, 0.50);
+    background: radial-gradient( circle at 50% 50%, rgba(117, 77, 210, 0.09), transparent 70% ), linear-gradient( 145deg, #15181f, #0f1217 );
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.16), 0 0 16px rgba(117, 77, 210, 0.07);
+}
+
+
+    .round-week-blind:hover {
+        border-color: rgba(164, 125, 255, 0.72);
+    }
+
+
+.battle-blind-label {
+    padding: 2px 5px;
+    width: fit-content;
+    border: 1px solid rgba(164, 125, 255, 0.45);
+    border-radius: 4px;
+    background: rgba(117, 77, 210, 0.10);
+    color: #b99cff;
+    font-size: 6px;
+    line-height: 7px;
+    font-weight: 950;
+    letter-spacing: 0.8px;
+}
+
+
+.round-week-blind
+.battle-week-title strong {
+    color: #b99cff;
+    text-shadow: 0 0 10px rgba(164, 125, 255, 0.28);
+}
+
+
+.round-week-blind
+.battle-preview-fantasy strong,
+.round-week-blind
+.battle-assigned-fantasy strong {
+    color: #b99cff !important;
+    text-shadow: 0 0 12px rgba(164, 125, 255, 0.32);
+}
+
+
+.round-week-blind
+.battle-opponent-placeholder {
+    border-color: rgba(164, 125, 255, 0.30);
+    color: #b99cff;
+    background: rgba(117, 77, 210, 0.10);
+}
+/* =========================================================
+   CROPPED CPU OPPONENT CARDS
+
+   Only affects cards sitting in the CPU opponent sidebar.
+
+   Draft cards, your cards, perk cards and revealed cards
+   stay completely normal.
+   ========================================================= */
+
+.round-opponent-card-wrap {
+    overflow: hidden;
+}
+
+
+    /* Crop the opponent card before the stats section */
+
+    .round-opponent-card-wrap
+    .player-card {
+        height: 125px !important;
+        overflow: hidden !important;
+        padding-bottom: 8px !important;
+    }
+
+
+    /* Remove the stat area completely */
+
+    .round-opponent-card-wrap
+    .player-card-bottom {
+        display: none !important;
+    }
+
+
+    /* Keep the identity portion centered nicely */
+
+    .round-opponent-card-wrap
+    .player-card-headshot-wrap {
+        margin-bottom: 6px !important;
+    }
+
+
+    .round-opponent-card-wrap
+    .player-card-name {
+        margin-bottom: 2px !important;
+    }
+
+
+    .round-opponent-card-wrap
+    .player-card-meta {
+        margin-bottom: 0 !important;
+    }
+/* =========================================================
+   WEEK RESULT STAT RIBBON
+   Small weekly box-score summary above each player's name.
+   ========================================================= */
+
+.battle-result-player-info
+.battle-result-statline {
+    width: fit-content;
+    max-width: 100%;
+    margin-bottom: 1px;
+    padding: 2px 5px;
+    overflow: hidden;
+    border: 1px solid color-mix( in srgb, var(--battle-accent, #ff6500) 32%, transparent );
+    border-radius: 4px;
+    background: color-mix( in srgb, var(--battle-accent, #ff6500) 8%, transparent );
+    color: var( --battle-accent, #ff6500 ) !important;
+    font-size: 6px !important;
+    line-height: 8px;
+    font-weight: 950 !important;
+    letter-spacing: 0.25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-shadow: 0 0 8px color-mix( in srgb, var(--battle-accent, #ff6500) 25%, transparent );
+}
+
+/* =========================================================
+   WEEK RESULT STAT HIGHLIGHTS
+   ========================================================= */
+
+.battle-result-statline {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+
+/* Normal stat */
+
+.battle-result-stat {
+    color: #7b8390 !important;
+    font-size: 6px !important;
+    line-height: 8px;
+    font-weight: 900 !important;
+    white-space: nowrap;
+}
+
+
+/* Dot between stats */
+
+.battle-result-stat-separator {
+    color: #4f5661 !important;
+    font-size: 6px !important;
+    font-weight: 900 !important;
+}
+
+
+/* =========================================================
+   GOOD PERFORMANCE
+   ========================================================= */
+
+.battle-result-stat-good {
+    color: #ff7a1a !important;
+    font-weight: 950 !important;
+    text-shadow: 0 0 5px rgba(255, 122, 26, 0.70), 0 0 10px rgba(255, 122, 26, 0.28);
+}
+
+
+/* =========================================================
+   ELITE PERFORMANCE
+   ========================================================= */
+
+.battle-result-stat-elite {
+    color: #ffd166 !important;
+    font-weight: 950 !important;
+    text-shadow: 0 0 6px rgba(255, 209, 102, 0.85), 0 0 12px rgba(255, 209, 102, 0.40);
+}
+/* =========================================================
+   PERK SYSTEM ADDITIONS
+   BENCH + FILM STUDY
+   ========================================================= */
+
+
+/* =========================================================
+   BENCH
+   ========================================================= */
+
+.round-bench-area {
+    width: 100%;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-sizing: border-box;
+}
+
+
+    .round-bench-area
+    .round-panel-heading {
+        margin-bottom: 10px;
+    }
+
+
+    .round-bench-area
+    .round-roster-card-wrap {
+        margin: 0 auto;
+    }
+
+
+    .round-bench-area
+    .round-player-used {
+        margin-top: 7px;
+        position: static;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        color: #9299a6;
+        font-size: 7px;
+        line-height: 10px;
+        font-weight: 950;
+        letter-spacing: 0.7px;
+    }
+
+
+/* =========================================================
+   FILM STUDY
+   ========================================================= */
+
+.film-study-reveal {
+    width: fit-content;
+    margin: 7px auto 0;
+    padding: 4px 7px;
+    border: 1px solid rgba(255, 101, 0, 0.35);
+    border-radius: 6px;
+    background: rgba(255, 101, 0, 0.08);
+    color: #ff8a43;
+    font-size: 7px;
+    line-height: 10px;
+    font-weight: 950;
+    letter-spacing: 0.8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 101, 0, 0.08);
+}
+/* =========================================================
+   RESULTS REVEAL ANIMATION
+   ========================================================= */
+
+.battle-result-card {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease, box-shadow 0.25s ease;
+}
+
+.battle-result-card-hidden {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    filter: blur(6px);
+    pointer-events: none;
+}
+
+.battle-result-card-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+
+/* =========================================================
+   RESULT CARD FEEL
+   ========================================================= */
+
+.battle-result-win {
+    box-shadow: inset 0 0 0 1px rgba(44, 255, 150, 0.18), 0 0 18px rgba(44, 255, 150, 0.08);
+}
+
+.battle-result-loss {
+    box-shadow: inset 0 0 0 1px rgba(255, 60, 60, 0.18), 0 0 18px rgba(255, 60, 60, 0.08);
+}
+
+
+/* =========================================================
+   RESULTS SUMMARY REVEAL
+   ========================================================= */
+
+.battle-results-summary {
+    opacity: 0;
+    transform: translateY(16px);
+    pointer-events: none;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.battle-results-summary-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* =========================================================
+   RESOLVED BLIND WEEK WIN
+   Purple payoff after a Blind Week is revealed and won.
+   Normal wins remain green. Blind Week losses remain red.
+   ========================================================= */
+
+.category-blind-user-won {
+    border-color: rgba(164, 125, 255, 0.78) !important;
+    background: radial-gradient( circle at 50% 50%, rgba(117, 77, 210, 0.19), transparent 72% ), linear-gradient(145deg, #171421, #101217) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), 0 0 22px rgba(117, 77, 210, 0.22), inset 0 0 0 1px rgba(185, 156, 255, 0.14) !important;
+}
+
+    .category-blind-user-won
+    .battle-week-title strong {
+        color: #b99cff;
+        text-shadow: 0 0 12px rgba(164, 125, 255, 0.34);
+    }
+
+    .category-blind-user-won
+    .battle-result-user
+    .battle-result-score {
+        color: #b99cff;
+        text-shadow: 0 0 12px rgba(164, 125, 255, 0.22);
+    }
+
+    .category-blind-user-won
+    .battle-result-center strong {
+        color: #cdbdff;
+        text-shadow: 0 0 10px rgba(164, 125, 255, 0.25);
+    }
+
+
+
+/* =========================================================
+   GAME OVER / RUN SUMMARY
+   ========================================================= */
+
+.game-over-page {
+    min-height: 100vh;
+}
+
+.game-over-page-loss {
+    background: radial-gradient( circle at 50% 5%, rgba(244, 71, 71, 0.08), transparent 34% ), radial-gradient( circle at 50% 55%, rgba(255, 101, 0, 0.035), transparent 58% ), linear-gradient(180deg, #0a0c10 0%, #080a0e 100%);
+}
+
+.game-over-page-champion {
+    background: radial-gradient( circle at 50% 4%, rgba(255, 177, 45, 0.12), transparent 36% ), radial-gradient( circle at 50% 55%, rgba(255, 101, 0, 0.055), transparent 60% ), linear-gradient(180deg, #0b0c0e 0%, #080a0e 100%);
+}
+
+.game-over-topbar {
+    position: relative;
+    z-index: 2;
+}
+
+.game-over-screen {
+    width: min(1240px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 55px 0 75px;
+    box-sizing: border-box;
+}
+
+.game-over-hero {
+    max-width: 820px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.game-over-kicker {
+    display: block;
+    margin-bottom: 8px;
+    color: #ff6500;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 950;
+    letter-spacing: 2.2px;
+}
+
+.game-over-page-loss
+.game-over-kicker {
+    color: #ff6262;
+}
+
+.game-over-page-champion
+.game-over-kicker {
+    color: #ffc14a;
+}
+
+.game-over-hero h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(50px, 7vw, 86px);
+    line-height: 0.95;
+    font-weight: 950;
+    letter-spacing: -3px;
+}
+
+.game-over-page-loss
+.game-over-hero h1 {
+    text-shadow: 0 0 30px rgba(244, 71, 71, 0.12);
+}
+
+.game-over-page-champion
+.game-over-hero h1 {
+    color: #ffd36b;
+    text-shadow: 0 0 30px rgba(255, 177, 45, 0.16);
+}
+
+.game-over-hero p {
+    max-width: 650px;
+    margin: 14px auto 0;
+    color: #9098a5;
+    font-size: 11px;
+    line-height: 1.65;
+    font-weight: 750;
+}
+
+.game-over-summary-grid {
+    width: min(940px, 100%);
+    margin: 0 auto 42px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.game-over-stat-card {
+    min-height: 105px;
+    padding: 16px 14px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid #303641;
+    border-radius: 11px;
+    background: radial-gradient( circle at top center, rgba(255, 101, 0, 0.045), transparent 70% ), linear-gradient(145deg, #151920, #0f1217);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20);
+    text-align: center;
+}
+
+    .game-over-stat-card > span {
+        color: #737b88;
+        font-size: 7px;
+        line-height: 9px;
+        font-weight: 950;
+        letter-spacing: 1px;
+    }
+
+    .game-over-stat-card > strong {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 5px;
+        color: #ffffff;
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 950;
+    }
+
+        .game-over-stat-card > strong small {
+            color: #6f7784;
+            font-size: 12px;
+            line-height: 14px;
+            font-weight: 950;
+        }
+
+.game-over-page-loss
+.game-over-stat-score {
+    border-color: rgba(244, 71, 71, 0.42);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20), 0 0 18px rgba(244, 71, 71, 0.06);
+}
+
+.game-over-page-champion
+.game-over-stat-score {
+    border-color: rgba(255, 177, 45, 0.48);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20), 0 0 20px rgba(255, 177, 45, 0.08);
+}
+
+.game-over-fp-value {
+    font-size: 21px !important;
+}
+
+.game-over-section {
+    margin-top: 34px;
+    padding: 26px 22px 30px;
+    border: 1px solid #2c323c;
+    border-radius: 14px;
+    background: radial-gradient( circle at top center, rgba(255, 101, 0, 0.025), transparent 68% ), linear-gradient(145deg, rgba(21, 25, 32, 0.92), rgba(14, 17, 22, 0.94));
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+}
+
+.game-over-section-heading {
+    margin-bottom: 23px;
+    text-align: center;
+}
+
+    .game-over-section-heading span {
+        display: block;
+        margin-bottom: 5px;
+        color: #ff6500;
+        font-size: 7px;
+        line-height: 9px;
+        font-weight: 950;
+        letter-spacing: 1.4px;
+    }
+
+    .game-over-section-heading h2 {
+        margin: 0;
+        color: #ffffff;
+        font-size: 25px;
+        line-height: 28px;
+        font-weight: 950;
+        letter-spacing: -0.6px;
+    }
+
+.game-over-roster-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 12px;
+    align-items: start;
+    justify-items: center;
+}
+
+.game-over-roster-card {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-over-roster-position,
+.game-over-bench-label {
+    margin-bottom: 6px;
+    color: #858d99;
+    font-size: 7px;
+    line-height: 9px;
+    font-weight: 950;
+    letter-spacing: 1px;
+}
+
+.game-over-roster-grid
+.player-card,
+.game-over-bench
+.player-card {
+    width: 148px !important;
+    max-width: 100% !important;
+}
+
+.game-over-bench {
+    width: fit-content;
+    margin: 25px auto 0;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.game-over-bench-label {
+    color: #b99cff;
+}
+
+.game-over-perk-section {
+    padding-bottom: 26px;
+}
+
+.game-over-perks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.game-over-perk-chip {
+    min-height: 38px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 101, 0, 0.28);
+    border-radius: 8px;
+    background: rgba(255, 101, 0, 0.055);
+}
+
+    .game-over-perk-chip span {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .game-over-perk-chip strong {
+        color: #d8dce3;
+        font-size: 8px;
+        line-height: 10px;
+        font-weight: 950;
+        letter-spacing: 0.45px;
+    }
+
+.game-over-no-perks {
+    color: #747c89;
+    font-size: 9px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.game-over-actions {
+    margin-top: 34px;
+    display: flex;
+    justify-content: center;
+}
+
+.game-over-new-run-button {
+    min-width: 210px;
+    min-height: 46px;
+    padding: 0 28px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff7900, #ff4f00);
+    color: #ffffff;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 950;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(255, 90, 0, 0.22);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+    .game-over-new-run-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 11px 28px rgba(255, 90, 0, 0.32);
+    }
+
+@media (max-width: 1120px) {
+    .game-over-roster-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        row-gap: 20px;
+    }
+
+        .game-over-roster-grid
+        .player-card {
+            width: 165px !important;
+        }
+}
+
+@media (max-width: 760px) {
+    .game-over-screen {
+        width: calc(100% - 20px);
+        padding-top: 38px;
+    }
+
+    .game-over-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .game-over-roster-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .game-over-section {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-over-hero h1 {
+        font-size: 44px;
+        letter-spacing: -2px;
+    }
+
+    .game-over-summary-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .game-over-stat-card {
+        min-height: 92px;
+        padding: 12px 8px;
+    }
+
+        .game-over-stat-card > strong {
+            font-size: 25px;
+        }
+
+    .game-over-roster-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px 8px;
+    }
+
+        .game-over-roster-grid
+        .player-card,
+        .game-over-bench
+        .player-card {
+            width: 145px !important;
+        }
+}
+
+
+/* =========================================================
+   MAIN TITLE SCREEN
+   ========================================================= */
+
+.title-page {
+    min-height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 13%, rgba(255, 112, 20, 0.13), transparent 25%), linear-gradient(180deg, rgba(5, 7, 10, 0.96), rgba(6, 9, 13, 0.99));
+}
+
+.title-screen {
+    position: relative;
+    min-height: 100vh;
+    padding: 56px 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+}
+
+    .title-screen::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -3;
+        opacity: 0.18;
+        background: linear-gradient(90deg, transparent 49.82%, rgba(255, 255, 255, 0.28) 49.9%, rgba(255, 255, 255, 0.28) 50.1%, transparent 50.18%), repeating-linear-gradient(90deg, transparent 0 8.2%, rgba(255, 255, 255, 0.08) 8.3% 8.45%, transparent 8.55% 16.65%), linear-gradient(180deg, transparent 0 62%, rgba(24, 87, 49, 0.18) 62% 100%);
+        mask-image: linear-gradient(180deg, transparent 0, #000 30%, #000 100%);
+    }
+
+    .title-screen::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -33vh;
+        width: 118vw;
+        height: 70vh;
+        z-index: -2;
+        transform: translateX(-50%);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 50% 50% 0 0;
+        background: repeating-linear-gradient(90deg, transparent 0 7.5%, rgba(255, 255, 255, 0.025) 7.6% 7.8%, transparent 7.9% 15%), linear-gradient(180deg, rgba(19, 68, 39, 0.18), rgba(9, 31, 20, 0.45));
+        box-shadow: 0 -45px 100px rgba(0, 0, 0, 0.42);
+    }
+
+.title-stadium-light {
+    position: absolute;
+    top: 5%;
+    width: 34vw;
+    height: 34vw;
+    max-width: 520px;
+    max-height: 520px;
+    z-index: -1;
+    opacity: 0.32;
+    filter: blur(7px);
+    background: radial-gradient(circle, rgba(255, 226, 190, 0.23), rgba(255, 126, 29, 0.07) 32%, transparent 67%);
+}
+
+.title-stadium-light-left {
+    left: -8vw;
+}
+
+.title-stadium-light-right {
+    right: -8vw;
+}
+
+.title-card {
+    width: min(760px, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title-logo-mark {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 101, 0, 0.9);
+    border-radius: 13px;
+    background: linear-gradient(145deg, rgba(255, 101, 0, 0.14), rgba(17, 20, 26, 0.94));
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 950;
+    letter-spacing: -0.4px;
+    box-shadow: 0 0 35px rgba(255, 101, 0, 0.16);
+}
+
+.title-kicker {
+    margin-bottom: 9px;
+    color: #ff7217;
+    font-size: 9px;
+    font-weight: 950;
+    letter-spacing: 2.2px;
+}
+
+.title-name {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    font-size: clamp(54px, 8vw, 104px);
+    line-height: 0.82;
+    font-weight: 950;
+    letter-spacing: -5px;
+    text-shadow: 0 10px 36px rgba(0, 0, 0, 0.42);
+}
+
+    .title-name span {
+        color: #ffffff;
+    }
+
+    .title-name strong {
+        color: #ff6500;
+        font: inherit;
+    }
+
+.title-description {
+    max-width: 620px;
+    margin: 26px auto 0;
+    color: #9ba3af;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.title-actions {
+    width: min(520px, 100%);
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.title-start-button,
+.title-secondary-button {
+    min-height: 48px;
+    padding: 0 22px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 950;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+}
+
+.title-start-button {
+    grid-column: 1 / -1;
+    border: none;
+    background: linear-gradient(135deg, #ff7900, #ff4f00);
+    box-shadow: 0 9px 28px rgba(255, 92, 0, 0.25);
+}
+
+    .title-start-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 13px 32px rgba(255, 92, 0, 0.36);
+    }
+
+.title-secondary-button {
+    border: 1px solid #353c47;
+    background: rgba(18, 22, 28, 0.88);
+    color: #bbc2cc;
+}
+
+    .title-secondary-button:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255, 101, 0, 0.55);
+        background: rgba(255, 101, 0, 0.07);
+        color: #ffffff;
+    }
+
+.title-mode-strip {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #636c79;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+    .title-mode-strip i {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: #ff6500;
+    }
+
+.title-creator-line {
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    flex-wrap: wrap;
+    color: #555e6b;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 0.9px;
+}
+
+    .title-creator-line a {
+        color: #8d96a3;
+        text-decoration: none;
+        transition: color 0.16s ease;
+    }
+
+        .title-creator-line a:hover {
+            color: #ff7217;
+        }
+
+
+/* =========================================================
+   INFO / HOW TO PLAY / ABOUT
+   ========================================================= */
+
+.info-page {
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 0%, rgba(255, 101, 0, 0.07), transparent 28%), linear-gradient(180deg, #0a0c10, #080a0e);
+}
+
+.info-topbar {
+    width: min(1180px, calc(100% - 34px));
+    min-height: 70px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.info-back-button {
+    justify-self: start;
+    border: none;
+    background: transparent;
+    color: #89919e;
+    font-size: 8px;
+    font-weight: 950;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+}
+
+    .info-back-button:hover {
+        color: #ff6500;
+    }
+
+.info-brand {
+    grid-column: 2;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ff6500;
+    border-radius: 7px;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 950;
+}
+
+.info-screen {
+    width: min(1050px, calc(100% - 34px));
+    margin: 0 auto;
+    padding: 46px 0 80px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-heading {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+    .info-heading > span {
+        color: #ff6500;
+        font-size: 8px;
+        font-weight: 950;
+        letter-spacing: 1.7px;
+    }
+
+    .info-heading h1 {
+        margin: 6px 0 8px;
+        color: #ffffff;
+        font-size: clamp(38px, 5vw, 58px);
+        line-height: 1;
+        font-weight: 950;
+        letter-spacing: -2px;
+    }
+
+    .info-heading p {
+        margin: 0;
+        color: #858e9b;
+        font-size: 11px;
+    }
+
+.how-to-play-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.how-to-play-card {
+    position: relative;
+    min-height: 142px;
+    padding: 22px 22px 20px 72px;
+    box-sizing: border-box;
+    border: 1px solid #2e3540;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #151920, #0f1217);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+    .how-to-play-screenshot {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 180px;
+        height: 104px;
+        border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.04);
+        object-fit: cover;
+        background: linear-gradient(180deg, #071018, #0b1116);
+        box-shadow: 0 10px 30px rgba(6, 11, 15, 0.6);
+    }
+
+    .how-to-play-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+.how-to-play-number {
+    position: absolute;
+    top: 21px;
+    left: 21px;
+    color: #ff6500;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 950;
+}
+
+.how-to-play-card h2 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 950;
+    letter-spacing: -0.2px;
+}
+
+.how-to-play-card p {
+    margin: 0;
+    color: #8d96a3;
+    font-size: 10px;
+    line-height: 1.65;
+}
+
+.info-primary-button {
+    min-width: 220px;
+    min-height: 46px;
+    margin-top: 28px;
+    padding: 0 22px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff7900, #ff4f00);
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 950;
+    letter-spacing: 0.9px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(255, 91, 0, 0.2);
+}
+
+.about-screen {
+    max-width: 900px;
+}
+
+.about-card {
+    width: min(760px, 100%);
+    padding: 34px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 28px;
+    align-items: center;
+    border: 1px solid #303742;
+    border-radius: 14px;
+    background: radial-gradient(circle at 0 0, rgba(255, 101, 0, 0.09), transparent 35%), linear-gradient(145deg, #171b22, #101319);
+    box-shadow: 0 15px 38px rgba(0, 0, 0, 0.26);
+}
+
+.about-creator-mark {
+    width: 88px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ff6500;
+    border-radius: 18px;
+    background: rgba(255, 101, 0, 0.06);
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 950;
+    box-shadow: 0 0 28px rgba(255, 101, 0, 0.09);
+}
+
+.about-copy > span {
+    color: #ff6500;
+    font-size: 7px;
+    font-weight: 950;
+    letter-spacing: 1.3px;
+}
+
+.about-copy h2 {
+    margin: 4px 0 13px;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 950;
+    letter-spacing: -0.8px;
+}
+
+.about-copy p {
+    margin: 0 0 10px;
+    color: #979faa;
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+    .about-copy p:last-child {
+        margin-bottom: 0;
+    }
+
+.about-tech-section {
+    width: min(900px, 100%);
+    margin-top: 18px;
+}
+
+.about-section-heading {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+    .about-section-heading span {
+        color: #ff6500;
+        font-size: 7px;
+        font-weight: 950;
+        letter-spacing: 1.3px;
+    }
+
+    .about-section-heading h2 {
+        margin: 5px 0 0;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 950;
+        letter-spacing: -0.4px;
+    }
+
+.about-tech-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+}
+
+    .about-tech-grid article {
+        min-width: 0;
+        padding: 18px;
+        border: 1px solid #2c333d;
+        border-radius: 10px;
+        background: linear-gradient(145deg, #141820, #0f1217);
+    }
+
+    .about-tech-grid strong {
+        display: block;
+        margin-bottom: 7px;
+        color: #f2f4f7;
+        font-size: 9px;
+        font-weight: 950;
+        letter-spacing: 0.5px;
+    }
+
+    .about-tech-grid p {
+        margin: 0;
+        color: #838c99;
+        font-size: 9px;
+        line-height: 1.6;
+    }
+
+.hall-of-fame-menu-screen {
+    width: min(1180px, calc(100% - 34px));
+}
+
+.hall-of-fame-menu-content {
+    width: 100%;
+}
+
+    .hall-of-fame-menu-content > * {
+        width: 100%;
+    }
+
+.about-links {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+    .about-links a {
+        min-width: 150px;
+        min-height: 40px;
+        padding: 0 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 101, 0, 0.42);
+        border-radius: 7px;
+        background: rgba(255, 101, 0, 0.07);
+        color: #ff7b28;
+        text-decoration: none;
+        font-size: 8px;
+        font-weight: 950;
+        letter-spacing: 0.8px;
+    }
+
+        .about-links a:hover {
+            border-color: rgba(255, 101, 0, 0.75);
+            background: rgba(255, 101, 0, 0.12);
+            color: #ffffff;
+        }
+
+.about-links-coming {
+    margin-top: 18px;
+    color: #666f7c;
+    font-size: 8px;
+    font-weight: 850;
+}
+
+.game-over-menu-button {
+    min-height: 42px;
+    padding: 0 22px;
+    border: 1px solid #3a424d;
+    border-radius: 7px;
+    background: #171b21;
+    color: #a1a9b4;
+    font-size: 9px;
+    font-weight: 950;
+    letter-spacing: 0.9px;
+    cursor: pointer;
+}
+
+    .game-over-menu-button:hover {
+        border-color: rgba(255, 101, 0, 0.55);
+        color: #ffffff;
+    }
+
+@media (max-width: 720px) {
+    .title-name {
+        font-size: clamp(48px, 16vw, 76px);
+        letter-spacing: -3px;
+    }
+
+    .title-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .title-start-button {
+        grid-column: auto;
+    }
+
+    .title-mode-strip {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .how-to-play-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .how-to-play-card:last-child {
+        grid-column: auto;
+    }
+
+    .about-card {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .about-copy h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-screen {
+        padding: 38px 16px;
+    }
+
+    .title-description {
+        font-size: 11px;
+    }
+
+    .info-topbar,
+    .info-screen {
+        width: calc(100% - 22px);
+    }
+
+    .how-to-play-card {
+        padding: 20px 18px 18px 62px;
+    }
+
+    .about-card {
+        padding: 24px 18px;
+    }
+}
+
+/* =========================================================
+   PLAYOFF / CHAMPIONSHIP ATMOSPHERE
+   ROUNDS 10, 11, AND 12
+
+   PERFORMANCE VERSION
+   Keeps the stadium / field look, but avoids the expensive
+   live blur, backdrop-filter, masking animation, and large
+   animated filters that were causing late-round lag.
+   ========================================================= */
+
+.round-stage-10,
+.round-stage-11,
+.round-stage-12 {
+    position: relative;
+    isolation: isolate;
+    overflow-x: hidden;
+    contain: paint;
+}
+
+.round-stage-10 {
+    --stage-accent: #ff6500;
+    --stage-accent-soft: rgba(255, 101, 0, 0.22);
+    --stage-light: rgba(255, 145, 73, 0.19);
+    --stage-field: rgba(25, 77, 47, 0.20);
+    --stage-line: rgba(255, 255, 255, 0.075);
+    --stage-crowd-opacity: 0.22;
+    --stage-field-opacity: 0.34;
+}
+
+.round-stage-11 {
+    --stage-accent: #ff8a24;
+    --stage-accent-soft: rgba(255, 138, 36, 0.28);
+    --stage-light: rgba(255, 177, 90, 0.25);
+    --stage-field: rgba(24, 83, 48, 0.24);
+    --stage-line: rgba(255, 255, 255, 0.095);
+    --stage-crowd-opacity: 0.28;
+    --stage-field-opacity: 0.44;
+}
+
+.round-stage-12 {
+    --stage-accent: #f3c55b;
+    --stage-accent-soft: rgba(243, 197, 91, 0.30);
+    --stage-light: rgba(255, 224, 151, 0.30);
+    --stage-field: rgba(25, 91, 52, 0.28);
+    --stage-line: rgba(255, 255, 255, 0.12);
+    --stage-crowd-opacity: 0.34;
+    --stage-field-opacity: 0.54;
+}
+
+    .round-stage-10 > *,
+    .round-stage-11 > *,
+    .round-stage-12 > * {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Static stadium lights + crowd texture.
+   No animation, blur, or mask-image means dramatically less repaint work. */
+    .round-stage-10::before,
+    .round-stage-11::before,
+    .round-stage-12::before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        height: 390px;
+        pointer-events: none;
+        opacity: var(--stage-crowd-opacity);
+        background-image: radial-gradient(ellipse at 12% 3%, var(--stage-light) 0%, transparent 24%), radial-gradient(ellipse at 88% 3%, var(--stage-light) 0%, transparent 24%), radial-gradient(ellipse at 50% 0%, var(--stage-accent-soft) 0%, transparent 31%), linear-gradient(to bottom, transparent 0 35%, rgba(255, 255, 255, 0.04) 35% 35.35%, transparent 35.35% 76%, rgba(0, 0, 0, 0.55) 100%), radial-gradient(circle, rgba(255, 255, 255, 0.23) 0 0.7px, transparent 1px);
+        background-size: auto, auto, auto, auto, 12px 10px;
+        background-position: center, center, center, center, center 164px;
+    }
+
+    /* Static perspective field.
+   The fade is baked into the gradient instead of using mask-image/filter. */
+    .round-stage-10::after,
+    .round-stage-11::after,
+    .round-stage-12::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 205px;
+        left: 7%;
+        width: 86%;
+        height: 470px;
+        pointer-events: none;
+        opacity: var(--stage-field-opacity);
+        clip-path: polygon(19% 0, 81% 0, 100% 100%, 0 100%);
+        background: linear-gradient( 90deg, transparent 0 5.5%, var(--stage-line) 5.5% 5.8%, transparent 5.8% 94.2%, var(--stage-line) 94.2% 94.5%, transparent 94.5% 100% ), repeating-linear-gradient( to bottom, var(--stage-line) 0 1px, transparent 1px 46px ), linear-gradient( 180deg, var(--stage-field) 0%, rgba(7, 27, 17, 0.08) 62%, transparent 100% );
+    }
+
+    .round-stage-10 .topBar,
+    .round-stage-11 .topBar,
+    .round-stage-12 .topBar {
+        border-bottom-color: var(--stage-accent-soft);
+        background: rgba(7, 9, 12, 0.97);
+    }
+
+    .round-stage-10 .round-header-record,
+    .round-stage-11 .round-header-record,
+    .round-stage-12 .round-header-record,
+    .round-stage-10 .round-kicker,
+    .round-stage-11 .round-kicker,
+    .round-stage-12 .round-kicker,
+    .round-stage-10 .round-category-score-vs,
+    .round-stage-11 .round-category-score-vs,
+    .round-stage-12 .round-category-score-vs {
+        color: var(--stage-accent);
+    }
+
+    .round-stage-10 .round-hero,
+    .round-stage-11 .round-hero,
+    .round-stage-12 .round-hero {
+        padding-top: 30px;
+        padding-bottom: 23px;
+    }
+
+        .round-stage-10 .round-hero h1,
+        .round-stage-11 .round-hero h1,
+        .round-stage-12 .round-hero h1 {
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.70), 0 0 18px var(--stage-accent-soft);
+        }
+
+    .round-stage-10 .round-kicker,
+    .round-stage-11 .round-kicker,
+    .round-stage-12 .round-kicker {
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px var(--stage-accent-soft);
+    }
+
+    .round-stage-10 .round-category-score,
+    .round-stage-11 .round-category-score,
+    .round-stage-12 .round-category-score {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 7px 13px;
+        border: 1px solid var(--stage-accent-soft);
+        border-radius: 9px;
+        background: rgba(8, 11, 15, 0.94);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+    }
+
+    .round-stage-10 .round-roster-panel,
+    .round-stage-10 .round-opponent-panel,
+    .round-stage-11 .round-roster-panel,
+    .round-stage-11 .round-opponent-panel,
+    .round-stage-12 .round-roster-panel,
+    .round-stage-12 .round-opponent-panel {
+        background: linear-gradient(145deg, rgba(21, 25, 32, 0.98), rgba(14, 17, 22, 0.98));
+    }
+
+    .round-stage-10 .round-board-heading,
+    .round-stage-11 .round-board-heading,
+    .round-stage-12 .round-board-heading {
+        padding: 10px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.055);
+        border-left: 2px solid var(--stage-accent);
+        border-radius: 10px;
+        background: rgba(8, 11, 15, 0.96);
+    }
+
+        .round-stage-10 .round-board-heading h2,
+        .round-stage-11 .round-board-heading h2,
+        .round-stage-12 .round-board-heading h2 {
+            text-shadow: 0 0 12px var(--stage-accent-soft);
+        }
+
+    .round-stage-10 .round-week-category,
+    .round-stage-11 .round-week-category,
+    .round-stage-12 .round-week-category {
+        background: linear-gradient(180deg, var(--stage-accent-soft), transparent 58px), linear-gradient(145deg, rgba(21, 24, 31, 0.98), rgba(15, 18, 23, 0.98));
+    }
+
+/* Round 10: playoff arrival */
+.round-stage-10 .round-hero h1 {
+    color: #fff8f1;
+}
+
+.round-stage-10 .round-week-category:hover {
+    border-color: rgba(255, 101, 0, 0.52);
+}
+
+/* Round 11: one step from the championship */
+.round-stage-11 .round-hero h1 {
+    color: #fff3df;
+}
+
+.round-stage-11 .round-roster-panel,
+.round-stage-11 .round-opponent-panel,
+.round-stage-11 .round-week-category {
+    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.23), 0 0 12px rgba(255, 138, 36, 0.035);
+}
+
+/* Round 12: championship presentation */
+.round-stage-12 .round-hero h1 {
+    color: #fff3c8;
+    font-size: clamp(36px, 4.25vw, 48px);
+    letter-spacing: -1.8px;
+}
+
+.round-stage-12 .brand .logo {
+    border-color: #f3c55b;
+    box-shadow: 0 0 12px rgba(243, 197, 91, 0.13);
+}
+
+.round-stage-12 .round-board-heading {
+    border-left-width: 3px;
+    box-shadow: 0 0 14px rgba(243, 197, 91, 0.04);
+}
+
+.round-stage-12 .round-lock-lineup-button:not(:disabled),
+.round-stage-12 .round-auto-lineup-button:not(:disabled) {
+    border-color: rgba(243, 197, 91, 0.75);
+    background: linear-gradient(180deg, #f3c55b, #c98e28);
+    color: #111318;
+    box-shadow: 0 7px 17px rgba(243, 197, 91, 0.15);
+}
+
+    .round-stage-12 .round-lock-lineup-button:not(:disabled):hover,
+    .round-stage-12 .round-auto-lineup-button:not(:disabled):hover {
+        box-shadow: 0 9px 20px rgba(243, 197, 91, 0.22);
+    }
+
+.round-stage-12 .round-category-score strong {
+    color: #fff2bd;
+    text-shadow: 0 0 9px rgba(243, 197, 91, 0.13);
+}
+
+@media (max-width: 760px) {
+    .round-stage-10::before,
+    .round-stage-11::before,
+    .round-stage-12::before {
+        height: 320px;
+        background-size: auto, auto, auto, auto, 15px 12px;
+    }
+
+    .round-stage-10::after,
+    .round-stage-11::after,
+    .round-stage-12::after {
+        left: -12%;
+        width: 124%;
+        height: 390px;
+        opacity: calc(var(--stage-field-opacity) * 0.68);
+    }
+
+    .round-stage-10 .round-board-heading,
+    .round-stage-11 .round-board-heading,
+    .round-stage-12 .round-board-heading {
+        padding: 9px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP 2 x 4 SIDE ROSTER GRID
+
+   Active roster: 7 cards
+   Bench perk: 8th card fills the final grid cell
+   Opponent: 7 identity cards use the same 2-column rhythm
+   ========================================================= */
+
+@media (min-width: 1400px) {
+    .round-layout {
+        width: min(1560px, calc(100% - 24px));
+        grid-template-columns: 326px minmax(0, 1fr) 326px;
+        gap: 14px;
+    }
+
+    .round-roster-panel,
+    .round-opponent-panel {
+        padding: 10px;
+    }
+
+    .round-roster-cards,
+    .round-opponent-cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px 10px;
+        align-items: start;
+        justify-items: center;
+    }
+
+    .round-roster-card-wrap,
+    .round-opponent-card-wrap {
+        width: 100%;
+        min-width: 0;
+        align-items: center;
+    }
+
+        /* Your cards are smaller, but still keep the full stat footer. */
+        .round-roster-card-wrap .player-card {
+            width: 142px !important;
+            height: 154px !important;
+            padding: 9px 8px 8px !important;
+            border-radius: 10px !important;
+        }
+
+        .round-roster-card-wrap .player-card-headshot-wrap {
+            width: 48px !important;
+            height: 48px !important;
+            min-width: 48px !important;
+            min-height: 48px !important;
+            margin-bottom: 4px !important;
+        }
+
+        .round-roster-card-wrap .player-card-name {
+            font-size: 11px !important;
+            line-height: 12px !important;
+        }
+
+        .round-roster-card-wrap .player-card-meta {
+            margin-top: 2px !important;
+            gap: 3px !important;
+            font-size: 6px !important;
+            line-height: 7px !important;
+        }
+
+        .round-roster-card-wrap .player-card-logo-wrap {
+            width: 21px !important;
+            height: 21px !important;
+            top: 6px !important;
+            right: 6px !important;
+        }
+
+        .round-roster-card-wrap .player-card-bottom {
+            gap: 5px !important;
+        }
+
+        .round-roster-card-wrap .player-card-stat-box {
+            min-height: 34px !important;
+            padding: 4px 3px !important;
+            border-radius: 6px !important;
+        }
+
+            .round-roster-card-wrap .player-card-stat-box strong {
+                font-size: 12px !important;
+                line-height: 13px !important;
+            }
+
+            .round-roster-card-wrap .player-card-stat-box .player-card-fp {
+                font-size: 14px !important;
+                line-height: 15px !important;
+            }
+
+            .round-roster-card-wrap .player-card-stat-box span {
+                margin-top: 2px !important;
+                font-size: 4px !important;
+                line-height: 5px !important;
+            }
+
+        .round-roster-card-wrap .player-card-selected-check {
+            width: 18px !important;
+            height: 18px !important;
+            top: 6px !important;
+            left: 6px !important;
+            font-size: 10px !important;
+        }
+
+    .round-roster-position {
+        width: 142px;
+        margin: 0 auto 3px;
+        font-size: 6px;
+        line-height: 8px;
+    }
+
+    /* CPU cards remain identity-only and cropped before their stats. */
+    .round-opponent-card-wrap .player-card {
+        width: 142px !important;
+        height: 116px !important;
+        padding: 8px 7px 7px !important;
+        padding-bottom: 7px !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+    }
+
+    .round-opponent-card-wrap .player-card-headshot-wrap {
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 48px !important;
+        min-height: 48px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .round-opponent-card-wrap .player-card-name {
+        font-size: 11px !important;
+        line-height: 12px !important;
+    }
+
+    .round-opponent-card-wrap .player-card-meta {
+        margin-top: 2px !important;
+        gap: 3px !important;
+        font-size: 6px !important;
+        line-height: 7px !important;
+    }
+
+    .round-opponent-card-wrap .player-card-logo-wrap {
+        width: 21px !important;
+        height: 21px !important;
+        top: 6px !important;
+        right: 6px !important;
+    }
+
+    .round-opponent-card-wrap .player-card-bottom {
+        display: none !important;
+    }
+
+    .round-player-used {
+        font-size: 6px;
+    }
+}
+
+/* Medium desktop: keep the center battle board healthy.
+   The 2-column roster only turns on when there is enough width. */
+@media (min-width: 1260px) and (max-width: 1399px) {
+    .round-roster-card-wrap .player-card,
+    .round-opponent-card-wrap .player-card {
+        width: 150px !important;
+    }
+}
+
+
+/* =========================================================
+   ROUND 9+ ARENA ATMOSPHERE
+   Pure CSS atmosphere for the RoundArenaAtmosphere React layer.
+   No image assets, video, canvas, or AI-generated artwork.
+   ========================================================= */
+
+.gauntlet-page.round-stage {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.gg-round-content {
+    position: relative;
+    z-index: 1;
+}
+
+.gg-arena-atmosphere {
+    --gg-beam-rgb: 110, 160, 255;
+    --gg-particle-rgb: 205, 224, 255;
+    --gg-glow-rgb: 68, 118, 255;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 12%, rgba(var(--gg-glow-rgb), .11), transparent 31%), radial-gradient(circle at 50% 86%, rgba(var(--gg-glow-rgb), .09), transparent 40%), linear-gradient(180deg, rgba(3,6,15,.99), rgba(6,10,22,.98) 48%, rgba(2,4,10,1));
+}
+
+.gg-arena-r9 {
+    --gg-beam-rgb: 96, 149, 255;
+    --gg-particle-rgb: 188, 215, 255;
+    --gg-glow-rgb: 55, 105, 225;
+}
+
+.gg-arena-r10 {
+    --gg-beam-rgb: 125, 174, 255;
+    --gg-particle-rgb: 211, 229, 255;
+    --gg-glow-rgb: 65, 125, 255;
+}
+
+.gg-arena-r11 {
+    --gg-beam-rgb: 177, 204, 255;
+    --gg-particle-rgb: 228, 238, 255;
+    --gg-glow-rgb: 102, 136, 255;
+}
+
+.gg-arena-r12 {
+    --gg-beam-rgb: 255, 177, 110;
+    --gg-particle-rgb: 255, 222, 191;
+    --gg-glow-rgb: 255, 88, 46;
+    background: radial-gradient(circle at 50% 10%, rgba(255,182,111,.14), transparent 30%), radial-gradient(circle at 50% 82%, rgba(var(--gg-glow-rgb), .17), transparent 44%), linear-gradient(180deg, rgba(12,4,7,.99), rgba(21,7,12,.98) 46%, rgba(5,3,8,1));
+}
+
+.gg-arena-endless {
+    --gg-beam-rgb: 171, 128, 255;
+    --gg-particle-rgb: 222, 205, 255;
+    --gg-glow-rgb: 119, 71, 255;
+    background: radial-gradient(circle at 50% 10%, rgba(168,116,255,.14), transparent 32%), radial-gradient(circle at 50% 84%, rgba(var(--gg-glow-rgb), .14), transparent 44%), linear-gradient(180deg, rgba(6,3,16,.99), rgba(13,7,29,.98) 46%, rgba(3,2,9,1));
+}
+
+.gg-arena-beam {
+    position: absolute;
+    top: -24%;
+    width: 27%;
+    height: 132%;
+    transform-origin: 50% 0;
+    clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%);
+    background: linear-gradient(180deg, rgba(var(--gg-beam-rgb), .25) 0%, rgba(var(--gg-beam-rgb), .12) 24%, rgba(var(--gg-beam-rgb), .04) 54%, rgba(var(--gg-beam-rgb), 0) 100%);
+    filter: blur(11px);
+    opacity: .48;
+    will-change: transform, opacity;
+}
+
+.gg-arena-r9 .gg-arena-beam {
+    opacity: .30;
+}
+
+.gg-arena-r10 .gg-arena-beam {
+    opacity: .42;
+}
+
+.gg-arena-r11 .gg-arena-beam {
+    opacity: .56;
+    filter: blur(9px);
+}
+
+.gg-arena-r12 .gg-arena-beam {
+    opacity: .72;
+    filter: blur(8px);
+}
+
+.gg-arena-beam-1 {
+    left: 4%;
+    animation: ggSweep1 9.5s ease-in-out infinite alternate;
+}
+
+.gg-arena-beam-2 {
+    left: 24%;
+    animation: ggSweep2 11.5s ease-in-out infinite alternate;
+}
+
+.gg-arena-beam-3 {
+    left: 44%;
+    animation: ggSweep3 10.2s ease-in-out infinite alternate;
+}
+
+.gg-arena-beam-4 {
+    left: 64%;
+    animation: ggSweep4 12.2s ease-in-out infinite alternate;
+}
+
+.gg-arena-beam-5 {
+    left: 80%;
+    animation: ggSweep5 9.9s ease-in-out infinite alternate;
+}
+
+@keyframes ggSweep1 {
+    from {
+        transform: rotate(-12deg) translateX(-3%);
+        opacity: .28;
+    }
+
+    to {
+        transform: rotate(9deg) translateX(7%);
+        opacity: .70;
+    }
+}
+
+@keyframes ggSweep2 {
+    from {
+        transform: rotate(10deg) translateX(3%);
+        opacity: .62;
+    }
+
+    to {
+        transform: rotate(-8deg) translateX(-6%);
+        opacity: .30;
+    }
+}
+
+@keyframes ggSweep3 {
+    from {
+        transform: rotate(-5deg) translateX(-2%);
+        opacity: .36;
+    }
+
+    to {
+        transform: rotate(7deg) translateX(5%);
+        opacity: .72;
+    }
+}
+
+@keyframes ggSweep4 {
+    from {
+        transform: rotate(8deg) translateX(4%);
+        opacity: .56;
+    }
+
+    to {
+        transform: rotate(-10deg) translateX(-5%);
+        opacity: .28;
+    }
+}
+
+@keyframes ggSweep5 {
+    from {
+        transform: rotate(-9deg) translateX(-4%);
+        opacity: .30;
+    }
+
+    to {
+        transform: rotate(11deg) translateX(6%);
+        opacity: .68;
+    }
+}
+
+.gg-arena-particle {
+    position: absolute;
+    left: var(--particle-x);
+    top: var(--particle-y);
+    width: var(--particle-size);
+    height: var(--particle-size);
+    border-radius: 999px;
+    background: rgba(var(--gg-particle-rgb), .94);
+    box-shadow: 0 0 7px rgba(var(--gg-particle-rgb), .48), 0 0 18px rgba(var(--gg-particle-rgb), .18);
+    opacity: .34;
+    animation: ggParticle var(--particle-duration) ease-in-out var(--particle-delay) infinite alternate;
+}
+
+.gg-arena-r9 .gg-arena-particle {
+    opacity: .22;
+}
+
+.gg-arena-r11 .gg-arena-particle {
+    opacity: .42;
+}
+
+.gg-arena-r12 .gg-arena-particle {
+    opacity: .58;
+}
+
+@keyframes ggParticle {
+    from {
+        transform: translate3d(-5px,14px,0) scale(.78);
+        opacity: .10;
+    }
+
+    45% {
+        opacity: .72;
+    }
+
+    to {
+        transform: translate3d(9px,-42px,0) scale(1.18);
+        opacity: .18;
+    }
+}
+
+.gg-arena-horizon-lights {
+    position: absolute;
+    left: 4%;
+    right: 4%;
+    bottom: 16%;
+    height: 82px;
+    opacity: .28;
+    background-image: radial-gradient(circle, rgba(var(--gg-particle-rgb),.9) 0 2px, transparent 3px), radial-gradient(circle, rgba(var(--gg-particle-rgb),.55) 0 1px, transparent 2px);
+    background-size: 92px 40px, 63px 36px;
+    background-position: 0 10px, 30px 34px;
+    mask-image: linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+}
+
+.gg-arena-r12 .gg-arena-horizon-lights {
+    opacity: .48;
+}
+
+.gg-arena-stage-glow {
+    position: absolute;
+    left: 50%;
+    bottom: -12%;
+    width: 84%;
+    height: 46%;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse at center, rgba(var(--gg-glow-rgb),.23) 0%, rgba(var(--gg-glow-rgb),.08) 38%, rgba(var(--gg-glow-rgb),0) 72%);
+    filter: blur(26px);
+    animation: ggGlow 5.5s ease-in-out infinite alternate;
+}
+
+.gg-arena-r12 .gg-arena-stage-glow {
+    animation-duration: 3.8s;
+}
+
+@keyframes ggGlow {
+    from {
+        transform: translateX(-50%) scaleX(.92);
+        opacity: .52;
+    }
+
+    to {
+        transform: translateX(-50%) scaleX(1.06);
+        opacity: 1;
+    }
+}
+
+.gg-arena-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 34%, rgba(0,0,0,.08) 60%, rgba(0,0,0,.52) 100%);
+}
+
+@media (max-width:760px) {
+    .gg-arena-beam {
+        width: 42%;
+    }
+
+    .gg-arena-beam-1 {
+        left: -7%;
+    }
+
+    .gg-arena-beam-2 {
+        left: 18%;
+    }
+
+    .gg-arena-beam-3 {
+        left: 42%;
+    }
+
+    .gg-arena-beam-4 {
+        left: 68%;
+    }
+
+    .gg-arena-beam-5 {
+        display: none;
+    }
+
+    .gg-arena-horizon-lights {
+        opacity: .18;
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .gg-arena-beam,
+    .gg-arena-particle,
+    .gg-arena-stage-glow {
+        animation: none !important;
+    }
+}
+
+/* =========================================================
+   ROUND 9+ ARENA VISIBILITY PASS
+   Stronger moving stage lights inspired by arena presentation.
+   Pure CSS. No image, video, canvas, or generated artwork.
+   ========================================================= */
+
+/* The older playoff pseudo-layers used a dotted crowd/field texture.
+   Turn them off so they do not visually cover the new moving arena. */
+.round-stage-10::before,
+.round-stage-11::before,
+.round-stage-12::before,
+.round-stage-10::after,
+.round-stage-11::after,
+.round-stage-12::after {
+    content: none !important;
+    display: none !important;
+}
+
+.gauntlet-page.round-stage {
+    background: #03050a;
+}
+
+.gg-round-content {
+    position: relative;
+    z-index: 2;
+}
+
+.gg-arena-atmosphere {
+    z-index: 1;
+    background: radial-gradient(ellipse at 50% 8%, rgba(var(--gg-glow-rgb), 0.18), transparent 34%), radial-gradient(ellipse at 50% 74%, rgba(var(--gg-glow-rgb), 0.10), transparent 48%), linear-gradient(180deg, #04070d 0%, #070b13 48%, #020308 100%);
+}
+
+    /* A faint ceiling rig gives the moving cones a visible source. */
+    .gg-arena-atmosphere::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        right: 5%;
+        height: 120px;
+        opacity: 0.62;
+        background: radial-gradient(circle at 8% 12%, rgba(var(--gg-particle-rgb), .95) 0 2px, rgba(var(--gg-particle-rgb), .28) 3px, transparent 9px), radial-gradient(circle at 28% 7%, rgba(var(--gg-particle-rgb), .82) 0 2px, rgba(var(--gg-particle-rgb), .22) 3px, transparent 9px), radial-gradient(circle at 50% 5%, rgba(var(--gg-particle-rgb), .92) 0 2px, rgba(var(--gg-particle-rgb), .26) 3px, transparent 10px), radial-gradient(circle at 72% 7%, rgba(var(--gg-particle-rgb), .82) 0 2px, rgba(var(--gg-particle-rgb), .22) 3px, transparent 9px), radial-gradient(circle at 92% 12%, rgba(var(--gg-particle-rgb), .95) 0 2px, rgba(var(--gg-particle-rgb), .28) 3px, transparent 9px), linear-gradient(180deg, rgba(255,255,255,.025), transparent 85%);
+        pointer-events: none;
+    }
+
+.gg-arena-beam {
+    top: -90px;
+    width: 38vw;
+    max-width: 680px;
+    min-width: 330px;
+    height: 1220px;
+    transform-origin: 50% 0;
+    clip-path: polygon(48.5% 0, 51.5% 0, 98% 100%, 2% 100%);
+    background: linear-gradient( 180deg, rgba(var(--gg-beam-rgb), .52) 0%, rgba(var(--gg-beam-rgb), .27) 22%, rgba(var(--gg-beam-rgb), .115) 52%, rgba(var(--gg-beam-rgb), .035) 76%, rgba(var(--gg-beam-rgb), 0) 100% );
+    filter: blur(2px);
+    mix-blend-mode: screen;
+    will-change: transform, opacity;
+}
+
+.gg-arena-r9 .gg-arena-beam {
+    opacity: .28;
+}
+
+.gg-arena-r10 .gg-arena-beam {
+    opacity: .55;
+}
+
+.gg-arena-r11 .gg-arena-beam {
+    opacity: .68;
+}
+
+.gg-arena-r12 .gg-arena-beam {
+    opacity: .82;
+}
+
+.gg-arena-endless .gg-arena-beam {
+    opacity: .72;
+}
+
+/* Spread beams across the whole stage rather than bunching them together. */
+.gg-arena-beam-1 {
+    left: -11%;
+    animation: ggArenaSweepLeft 8.8s ease-in-out infinite alternate;
+}
+
+.gg-arena-beam-2 {
+    left: 24%;
+    animation: ggArenaSweepCenter 10.6s ease-in-out infinite alternate;
+}
+
+.gg-arena-beam-3 {
+    left: 61%;
+    animation: ggArenaSweepRight 9.6s ease-in-out infinite alternate;
+}
+
+.gg-arena-beam-4 {
+    left: 76%;
+    animation: ggArenaSweepFarRight 11.2s ease-in-out infinite alternate;
+}
+
+.gg-arena-beam-5 {
+    left: 39%;
+    animation: ggArenaSweepCross 12s ease-in-out infinite alternate;
+}
+
+@keyframes ggArenaSweepLeft {
+    from {
+        transform: rotate(-14deg) translateX(-4%);
+    }
+
+    to {
+        transform: rotate(10deg) translateX(8%);
+    }
+}
+
+@keyframes ggArenaSweepCenter {
+    from {
+        transform: rotate(12deg) translateX(5%);
+    }
+
+    to {
+        transform: rotate(-10deg) translateX(-8%);
+    }
+}
+
+@keyframes ggArenaSweepRight {
+    from {
+        transform: rotate(-10deg) translateX(-5%);
+    }
+
+    to {
+        transform: rotate(13deg) translateX(7%);
+    }
+}
+
+@keyframes ggArenaSweepFarRight {
+    from {
+        transform: rotate(9deg) translateX(3%);
+    }
+
+    to {
+        transform: rotate(-13deg) translateX(-7%);
+    }
+}
+
+@keyframes ggArenaSweepCross {
+    from {
+        transform: rotate(-5deg) translateX(-3%);
+    }
+
+    to {
+        transform: rotate(7deg) translateX(5%);
+    }
+}
+
+/* Make the little arena lights readable without becoming confetti. */
+.gg-arena-particle {
+    opacity: .46;
+    box-shadow: 0 0 5px rgba(var(--gg-particle-rgb), .80), 0 0 15px rgba(var(--gg-particle-rgb), .32);
+}
+
+.gg-arena-r9 .gg-arena-particle {
+    opacity: .25;
+}
+
+.gg-arena-r10 .gg-arena-particle {
+    opacity: .46;
+}
+
+.gg-arena-r11 .gg-arena-particle {
+    opacity: .58;
+}
+
+.gg-arena-r12 .gg-arena-particle {
+    opacity: .68;
+}
+
+.gg-arena-horizon-lights {
+    bottom: 9%;
+    height: 120px;
+    opacity: .44;
+    background-size: 78px 42px, 53px 34px;
+}
+
+.gg-arena-r10 .gg-arena-horizon-lights {
+    opacity: .42;
+}
+
+.gg-arena-r11 .gg-arena-horizon-lights {
+    opacity: .54;
+}
+
+.gg-arena-r12 .gg-arena-horizon-lights {
+    opacity: .68;
+}
+
+.gg-arena-stage-glow {
+    bottom: -7%;
+    width: 94%;
+    height: 52%;
+    opacity: .88;
+    filter: blur(18px);
+}
+
+/* Warm final-boss color while preserving the same moving-light system. */
+.gg-arena-r12 {
+    background: radial-gradient(ellipse at 50% 7%, rgba(255, 160, 92, .22), transparent 34%), radial-gradient(ellipse at 50% 75%, rgba(255, 74, 38, .16), transparent 49%), linear-gradient(180deg, #0b0508 0%, #12070b 47%, #040306 100%);
+}
+
+.gg-arena-endless {
+    background: radial-gradient(ellipse at 50% 7%, rgba(173, 126, 255, .21), transparent 34%), radial-gradient(ellipse at 50% 75%, rgba(108, 62, 245, .16), transparent 49%), linear-gradient(180deg, #070412 0%, #0d071d 47%, #030208 100%);
+}
+
+@media (max-width: 760px) {
+    .gg-arena-beam {
+        width: 62vw;
+        min-width: 260px;
+        height: 1050px;
+    }
+
+    .gg-arena-beam-1 {
+        left: -25%;
+    }
+
+    .gg-arena-beam-2 {
+        left: 15%;
+    }
+
+    .gg-arena-beam-3 {
+        left: 54%;
+    }
+
+    .gg-arena-beam-4 {
+        left: 72%;
+    }
+
+    .gg-arena-horizon-lights {
+        opacity: .26;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gg-arena-beam {
+        animation: none !important;
+    }
+}
+
+/* =========================================================
+   ARENA SPOTLIGHT OVERRIDE V2
+   High-visibility CSS-only playoff presentation.
+   No image assets, video, canvas, or AI-generated artwork.
+   ========================================================= */
+
+/* Give every late-round page its own lighting palette. */
+.round-stage-9 {
+    --gg-stage-beam: 92, 142, 255;
+    --gg-stage-speck: 185, 211, 255;
+    --gg-stage-wash: 45, 83, 170;
+}
+
+.round-stage-10 {
+    --gg-stage-beam: 112, 166, 255;
+    --gg-stage-speck: 205, 225, 255;
+    --gg-stage-wash: 50, 105, 220;
+}
+
+.round-stage-11 {
+    --gg-stage-beam: 187, 211, 255;
+    --gg-stage-speck: 230, 239, 255;
+    --gg-stage-wash: 88, 126, 225;
+}
+
+.round-stage-12 {
+    --gg-stage-beam: 255, 174, 104;
+    --gg-stage-speck: 255, 222, 188;
+    --gg-stage-wash: 255, 82, 38;
+}
+
+.round-stage-endless {
+    --gg-stage-beam: 177, 130, 255;
+    --gg-stage-speck: 226, 207, 255;
+    --gg-stage-wash: 112, 66, 244;
+}
+
+/* Make sure the page itself does not paint over the stage. */
+.gauntlet-page.round-stage {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 50% 12%, rgba(var(--gg-stage-wash, 55, 95, 200), .16), transparent 34%), linear-gradient(180deg, #03060c 0%, #050810 48%, #020308 100%) !important;
+}
+
+/*
+   Direct page-level moving spotlights. This is intentionally independent
+   of the React atmosphere layer, so the effect remains visible even if an
+   older background rule exists elsewhere in the stylesheet.
+*/
+.round-stage-9::before,
+.round-stage-10::before,
+.round-stage-11::before,
+.round-stage-12::before,
+.round-stage-endless::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    z-index: 0 !important;
+    top: 50px !important;
+    left: -12% !important;
+    width: 124% !important;
+    height: 1050px !important;
+    pointer-events: none !important;
+    opacity: .72 !important;
+    transform-origin: 50% 0 !important;
+    mix-blend-mode: screen;
+    background: linear-gradient(74deg, transparent 0 27%, rgba(var(--gg-stage-beam), 0) 31%, rgba(var(--gg-stage-beam), .11) 38%, rgba(var(--gg-stage-beam), .34) 45%, rgba(var(--gg-stage-beam), .12) 52%, rgba(var(--gg-stage-beam), 0) 59%, transparent 63% 100%), linear-gradient(106deg, transparent 0 31%, rgba(var(--gg-stage-beam), 0) 35%, rgba(var(--gg-stage-beam), .10) 42%, rgba(var(--gg-stage-beam), .31) 49%, rgba(var(--gg-stage-beam), .10) 56%, rgba(var(--gg-stage-beam), 0) 63%, transparent 67% 100%), linear-gradient(89deg, transparent 0 40%, rgba(var(--gg-stage-beam), 0) 43%, rgba(var(--gg-stage-beam), .08) 47%, rgba(var(--gg-stage-beam), .22) 50%, rgba(var(--gg-stage-beam), .08) 53%, rgba(var(--gg-stage-beam), 0) 57%, transparent 60% 100%);
+    animation: ggPageSpotlights 8.5s ease-in-out infinite alternate !important;
+    will-change: transform, opacity;
+}
+
+.round-stage-9::before {
+    opacity: .38 !important;
+}
+
+.round-stage-10::before {
+    opacity: .58 !important;
+}
+
+.round-stage-11::before {
+    opacity: .82 !important;
+}
+
+.round-stage-12::before {
+    opacity: .95 !important;
+}
+
+.round-stage-endless::before {
+    opacity: .82 !important;
+}
+
+@keyframes ggPageSpotlights {
+    0% {
+        transform: translateX(-3%) skewX(-3deg) scaleX(.96);
+        filter: brightness(.88);
+    }
+
+    50% {
+        transform: translateX(2%) skewX(2deg) scaleX(1.02);
+        filter: brightness(1.08);
+    }
+
+    100% {
+        transform: translateX(5%) skewX(4deg) scaleX(.98);
+        filter: brightness(.94);
+    }
+}
+
+/* Tiny distant arena lights and a soft illuminated floor/horizon. */
+.round-stage-9::after,
+.round-stage-10::after,
+.round-stage-11::after,
+.round-stage-12::after,
+.round-stage-endless::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    z-index: 0 !important;
+    inset: 64px 0 auto 0 !important;
+    width: 100% !important;
+    height: 980px !important;
+    pointer-events: none !important;
+    opacity: .58 !important;
+    clip-path: none !important;
+    background: radial-gradient(circle at 7% 10%, rgba(var(--gg-stage-speck), .90) 0 2px, transparent 5px), radial-gradient(circle at 15% 24%, rgba(var(--gg-stage-speck), .58) 0 1.5px, transparent 4px), radial-gradient(circle at 27% 13%, rgba(var(--gg-stage-speck), .82) 0 2px, transparent 5px), radial-gradient(circle at 36% 30%, rgba(var(--gg-stage-speck), .52) 0 1px, transparent 4px), radial-gradient(circle at 48% 9%, rgba(var(--gg-stage-speck), .88) 0 2px, transparent 5px), radial-gradient(circle at 58% 25%, rgba(var(--gg-stage-speck), .54) 0 1.5px, transparent 4px), radial-gradient(circle at 70% 12%, rgba(var(--gg-stage-speck), .84) 0 2px, transparent 5px), radial-gradient(circle at 81% 27%, rgba(var(--gg-stage-speck), .56) 0 1px, transparent 4px), radial-gradient(circle at 93% 11%, rgba(var(--gg-stage-speck), .88) 0 2px, transparent 5px), radial-gradient(ellipse at 50% 72%, rgba(var(--gg-stage-wash), .16) 0%, rgba(var(--gg-stage-wash), .06) 34%, transparent 68%);
+    animation: ggArenaTwinkle 4.2s ease-in-out infinite alternate !important;
+}
+
+.round-stage-9::after {
+    opacity: .28 !important;
+}
+
+.round-stage-10::after {
+    opacity: .44 !important;
+}
+
+.round-stage-11::after {
+    opacity: .62 !important;
+}
+
+.round-stage-12::after {
+    opacity: .78 !important;
+}
+
+.round-stage-endless::after {
+    opacity: .66 !important;
+}
+
+@keyframes ggArenaTwinkle {
+    from {
+        opacity: .42;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: .78;
+        transform: translateY(-5px);
+    }
+}
+
+/* The React layer can stay too, but make it supplemental rather than hidden. */
+.gg-arena-atmosphere {
+    z-index: 0 !important;
+    background: transparent !important;
+}
+
+.gg-arena-beam {
+    opacity: .34;
+}
+
+.gg-arena-r10 .gg-arena-beam {
+    opacity: .46;
+}
+
+.gg-arena-r11 .gg-arena-beam {
+    opacity: .58;
+}
+
+.gg-arena-r12 .gg-arena-beam {
+    opacity: .66;
+}
+
+.gg-round-content {
+    position: relative;
+    z-index: 2 !important;
+}
+
+/* Keep cards readable while allowing the arena to remain visible around them. */
+.round-stage-9 .round-layout,
+.round-stage-10 .round-layout,
+.round-stage-11 .round-layout,
+.round-stage-12 .round-layout,
+.round-stage-endless .round-layout {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 760px) {
+    .round-stage-9::before,
+    .round-stage-10::before,
+    .round-stage-11::before,
+    .round-stage-12::before,
+    .round-stage-endless::before {
+        left: -35% !important;
+        width: 170% !important;
+        opacity: .55 !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .round-stage-9::before,
+    .round-stage-10::before,
+    .round-stage-11::before,
+    .round-stage-12::before,
+    .round-stage-endless::before,
+    .round-stage-9::after,
+    .round-stage-10::after,
+    .round-stage-11::after,
+    .round-stage-12::after,
+    .round-stage-endless::after {
+        animation: none !important;
+    }
+}
+
+/* =========================================================
+   CINEMATIC PLAYOFF STAGE - FINAL OVERRIDE
+
+   Goal: a dark arena stage with large crossing triangular light beams,
+   sparse distant light specks, dark side falloff, and a brighter center.
+   Everything here is CSS geometry and animation. No image artwork.
+   ========================================================= */
+
+/* Retire older late-round pseudo backgrounds so only one stage system wins. */
+.round-stage-9::before,
+.round-stage-10::before,
+.round-stage-11::before,
+.round-stage-12::before,
+.round-stage-endless::before,
+.round-stage-9::after,
+.round-stage-10::after,
+.round-stage-11::after,
+.round-stage-12::after,
+.round-stage-endless::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Keep the stage nearly black. The light cones provide the structure. */
+.gauntlet-page.round-stage-9,
+.gauntlet-page.round-stage-10,
+.gauntlet-page.round-stage-11,
+.gauntlet-page.round-stage-12,
+.gauntlet-page.round-stage-endless {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 50% 8%, rgba(255,255,255,.025), transparent 28%), linear-gradient(180deg, #05070b 0%, #06080c 42%, #030407 100%) !important;
+}
+
+/* Neutral stadium-light palette with a slightly warmer championship. */
+.round-stage-9 {
+    --stage-light: 180, 201, 235;
+    --stage-center: 160, 185, 224;
+}
+
+.round-stage-10 {
+    --stage-light: 193, 211, 240;
+    --stage-center: 174, 197, 231;
+}
+
+.round-stage-11 {
+    --stage-light: 210, 221, 241;
+    --stage-center: 194, 207, 230;
+}
+
+.round-stage-12 {
+    --stage-light: 231, 224, 215;
+    --stage-center: 218, 208, 198;
+}
+
+.round-stage-endless {
+    --stage-light: 202, 184, 237;
+    --stage-center: 184, 165, 226;
+}
+
+.gg-arena-atmosphere {
+    position: absolute !important;
+    inset: 64px 0 0 !important;
+    z-index: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    background: transparent !important;
+}
+
+    /* A faint center shaft gives the same stage-depth cue as a lit runway. */
+    .gg-arena-atmosphere::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: -2%;
+        left: 50%;
+        width: min(43vw, 780px);
+        height: 116%;
+        transform: translateX(-50%);
+        clip-path: polygon(42% 0, 58% 0, 78% 100%, 22% 100%);
+        background: linear-gradient( 180deg, rgba(var(--stage-center), .075) 0%, rgba(var(--stage-center), .11) 36%, rgba(var(--stage-center), .055) 68%, rgba(var(--stage-center), 0) 100% );
+        filter: blur(2px);
+    }
+
+/* Large, hard-edged triangular spotlights. */
+.gg-arena-beam {
+    --beam-opacity: .16;
+    position: absolute !important;
+    z-index: 1 !important;
+    top: -17% !important;
+    width: clamp(260px, 23vw, 470px) !important;
+    height: 125% !important;
+    min-height: 980px !important;
+    transform-origin: 50% 0 !important;
+    clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%) !important;
+    background: linear-gradient( 180deg, rgba(var(--stage-light), calc(var(--beam-opacity) * 1.35)) 0%, rgba(var(--stage-light), var(--beam-opacity)) 30%, rgba(var(--stage-light), calc(var(--beam-opacity) * .62)) 61%, rgba(var(--stage-light), 0) 100% ) !important;
+    filter: blur(1.5px) !important;
+    mix-blend-mode: screen;
+    opacity: 1 !important;
+    animation: ggStageBeamDrift 13s ease-in-out infinite alternate !important;
+    will-change: translate, opacity;
+}
+
+    /* A softer inner core makes each beam read as stadium lighting, not a flat polygon. */
+    .gg-arena-beam::after {
+        content: "";
+        position: absolute;
+        inset: 0 22%;
+        clip-path: polygon(44% 0, 56% 0, 100% 100%, 0 100%);
+        background: linear-gradient( 180deg, rgba(255,255,255,.095), rgba(255,255,255,.035) 58%, transparent 100% );
+    }
+
+/* Beam layout deliberately crosses the middle of the matchup stage. */
+.gg-arena-beam-1 {
+    left: -5% !important;
+    transform: rotate(16deg);
+    animation-delay: -2s !important;
+}
+
+.gg-arena-beam-2 {
+    left: 15% !important;
+    transform: rotate(-13deg);
+    animation-delay: -8s !important;
+}
+
+.gg-arena-beam-3 {
+    left: 31% !important;
+    transform: rotate(8deg);
+    animation-delay: -5s !important;
+}
+
+.gg-arena-beam-4 {
+    left: 45% !important;
+    transform: rotate(-5deg);
+    animation-delay: -10s !important;
+}
+
+.gg-arena-beam-5 {
+    left: 60% !important;
+    transform: rotate(10deg);
+    animation-delay: -6s !important;
+}
+
+.gg-arena-beam-6 {
+    left: 76% !important;
+    transform: rotate(-15deg);
+    animation-delay: -1s !important;
+}
+
+.gg-arena-beam-7 {
+    left: 91% !important;
+    transform: rotate(17deg);
+    animation-delay: -9s !important;
+}
+
+@keyframes ggStageBeamDrift {
+    0% {
+        translate: -18px 0;
+        opacity: .72;
+    }
+
+    48% {
+        translate: 7px 0;
+        opacity: 1;
+    }
+
+    100% {
+        translate: 20px 0;
+        opacity: .78;
+    }
+}
+
+/* Round progression changes strength, not the whole visual language. */
+.gg-arena-r9 .gg-arena-beam {
+    --beam-opacity: .075;
+}
+
+.gg-arena-r10 .gg-arena-beam {
+    --beam-opacity: .105;
+}
+
+.gg-arena-r11 .gg-arena-beam {
+    --beam-opacity: .145;
+}
+
+.gg-arena-r12 .gg-arena-beam {
+    --beam-opacity: .19;
+}
+
+.gg-arena-endless .gg-arena-beam {
+    --beam-opacity: .155;
+}
+
+/* Sparse tiny pin lights. They twinkle instead of floating across the screen. */
+.gg-arena-particle {
+    z-index: 3 !important;
+    width: var(--particle-size) !important;
+    height: var(--particle-size) !important;
+    max-width: 4px;
+    max-height: 4px;
+    background: rgba(var(--stage-light), .92) !important;
+    box-shadow: 0 0 5px rgba(var(--stage-light), .58), 0 0 13px rgba(var(--stage-light), .24) !important;
+    opacity: .38 !important;
+    animation: ggStageSpeck 3.8s ease-in-out var(--particle-delay) infinite alternate !important;
+}
+
+@keyframes ggStageSpeck {
+    from {
+        transform: scale(.72);
+        opacity: .12;
+    }
+
+    55% {
+        transform: scale(1.12);
+        opacity: .72;
+    }
+
+    to {
+        transform: scale(.86);
+        opacity: .28;
+    }
+}
+
+.gg-arena-horizon-lights {
+    z-index: 2 !important;
+    left: 3% !important;
+    right: 3% !important;
+    bottom: 16% !important;
+    height: 110px !important;
+    opacity: .20 !important;
+    background-image: radial-gradient(circle, rgba(var(--stage-light),.68) 0 1.5px, transparent 3.5px), radial-gradient(circle, rgba(var(--stage-light),.34) 0 1px, transparent 2.5px) !important;
+    background-size: 154px 54px, 97px 49px !important;
+    background-position: 17px 7px, 68px 34px !important;
+}
+
+.gg-arena-r11 .gg-arena-horizon-lights {
+    opacity: .28 !important;
+}
+
+.gg-arena-r12 .gg-arena-horizon-lights {
+    opacity: .36 !important;
+}
+
+/* Replace the colored floor glow with a subdued neutral stage wash. */
+.gg-arena-stage-glow {
+    z-index: 1 !important;
+    left: 50% !important;
+    bottom: -10% !important;
+    width: 76% !important;
+    height: 38% !important;
+    transform: translateX(-50%) !important;
+    background: radial-gradient( ellipse at center, rgba(var(--stage-center), .12) 0%, rgba(var(--stage-center), .045) 42%, transparent 72% ) !important;
+    filter: blur(26px) !important;
+}
+
+/* Deep black side curtains keep the focus in the center. */
+.gg-arena-vignette {
+    z-index: 4 !important;
+    background: linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.25) 13%, transparent 31%, transparent 69%, rgba(0,0,0,.25) 87%, rgba(0,0,0,.72) 100%), linear-gradient(180deg, rgba(0,0,0,.12) 0%, transparent 20%, transparent 76%, rgba(0,0,0,.28) 100%) !important;
+}
+
+/* Let the stage show through the matchup UI a little, while preserving readability. */
+.round-stage-9 .round-roster-panel,
+.round-stage-9 .round-opponent-panel,
+.round-stage-10 .round-roster-panel,
+.round-stage-10 .round-opponent-panel,
+.round-stage-11 .round-roster-panel,
+.round-stage-11 .round-opponent-panel,
+.round-stage-12 .round-roster-panel,
+.round-stage-12 .round-opponent-panel,
+.round-stage-endless .round-roster-panel,
+.round-stage-endless .round-opponent-panel {
+    background: linear-gradient(145deg, rgba(19,23,30,.86), rgba(10,13,18,.83)) !important;
+    backdrop-filter: blur(4px);
+}
+
+.round-stage-9 .round-week-category,
+.round-stage-10 .round-week-category,
+.round-stage-11 .round-week-category,
+.round-stage-12 .round-week-category,
+.round-stage-endless .round-week-category {
+    background: linear-gradient(145deg, rgba(18,21,27,.88), rgba(10,13,18,.84)) !important;
+    backdrop-filter: blur(3px);
+}
+
+/* Preserve all foreground content above the stage. */
+.round-stage .topBar,
+.round-stage .round-hero,
+.round-stage .round-layout {
+    position: relative;
+    z-index: 5 !important;
+}
+
+@media (max-width: 930px) {
+    .gg-arena-beam {
+        width: clamp(300px, 44vw, 500px) !important;
+    }
+
+    .gg-arena-beam-1 {
+        left: -26% !important;
+    }
+
+    .gg-arena-beam-2 {
+        left: 2% !important;
+    }
+
+    .gg-arena-beam-3 {
+        left: 28% !important;
+    }
+
+    .gg-arena-beam-4 {
+        left: 49% !important;
+    }
+
+    .gg-arena-beam-5 {
+        left: 70% !important;
+    }
+
+    .gg-arena-beam-6 {
+        left: 92% !important;
+    }
+
+    .gg-arena-beam-7 {
+        display: none !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gg-arena-beam,
+    .gg-arena-particle {
+        animation: none !important;
+    }
+}
+
+/* =========================================================
+   ROTATING ARENA LIGHTS - PERFORMANCE PASS
+
+   The beams pivot from their top anchor like real stage spotlights.
+   Performance rules:
+   - transform + opacity animation only
+   - no animated filters
+   - no mix-blend-mode
+   - no large backdrop-filter surfaces
+   - maximum seven beam elements
+   ========================================================= */
+
+.gg-arena-beam {
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    will-change: transform, opacity !important;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    contain: paint;
+}
+
+/* Each light sweeps on a different rhythm so the stage never moves as one slab. */
+.gg-arena-beam-1 {
+    animation: ggArenaRotateLeftWide 12.8s ease-in-out -2.4s infinite alternate !important;
+}
+
+.gg-arena-beam-2 {
+    animation: ggArenaRotateRightWide 15.6s ease-in-out -8.1s infinite alternate !important;
+}
+
+.gg-arena-beam-3 {
+    animation: ggArenaRotateLeftTight 13.9s ease-in-out -5.2s infinite alternate !important;
+}
+
+.gg-arena-beam-4 {
+    animation: ggArenaRotateCenter 16.8s ease-in-out -10.5s infinite alternate !important;
+}
+
+.gg-arena-beam-5 {
+    animation: ggArenaRotateRightTight 14.7s ease-in-out -6.3s infinite alternate !important;
+}
+
+.gg-arena-beam-6 {
+    animation: ggArenaRotateLeftWide 17.4s ease-in-out -1.1s infinite alternate-reverse !important;
+}
+
+.gg-arena-beam-7 {
+    animation: ggArenaRotateRightWide 18.2s ease-in-out -9.4s infinite alternate-reverse !important;
+}
+
+@keyframes ggArenaRotateLeftWide {
+    0% {
+        transform: translate3d(-1.5vw, 0, 0) rotate(22deg);
+        opacity: .70;
+    }
+
+    48% {
+        transform: translate3d(.5vw, 0, 0) rotate(3deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(2vw, 0, 0) rotate(-15deg);
+        opacity: .76;
+    }
+}
+
+@keyframes ggArenaRotateRightWide {
+    0% {
+        transform: translate3d(1.5vw, 0, 0) rotate(-22deg);
+        opacity: .72;
+    }
+
+    52% {
+        transform: translate3d(-.5vw, 0, 0) rotate(-2deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(-2vw, 0, 0) rotate(16deg);
+        opacity: .78;
+    }
+}
+
+@keyframes ggArenaRotateLeftTight {
+    0% {
+        transform: translate3d(-.8vw, 0, 0) rotate(13deg);
+        opacity: .76;
+    }
+
+    50% {
+        transform: translate3d(.3vw, 0, 0) rotate(0deg);
+        opacity: .98;
+    }
+
+    100% {
+        transform: translate3d(1vw, 0, 0) rotate(-10deg);
+        opacity: .80;
+    }
+}
+
+@keyframes ggArenaRotateRightTight {
+    0% {
+        transform: translate3d(.8vw, 0, 0) rotate(-13deg);
+        opacity: .76;
+    }
+
+    50% {
+        transform: translate3d(-.3vw, 0, 0) rotate(1deg);
+        opacity: .98;
+    }
+
+    100% {
+        transform: translate3d(-1vw, 0, 0) rotate(10deg);
+        opacity: .80;
+    }
+}
+
+@keyframes ggArenaRotateCenter {
+    0% {
+        transform: translate3d(-.6vw, 0, 0) rotate(-8deg);
+        opacity: .82;
+    }
+
+    50% {
+        transform: translate3d(.4vw, 0, 0) rotate(7deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(-.2vw, 0, 0) rotate(-4deg);
+        opacity: .86;
+    }
+}
+
+/* Large backdrop filters are expensive on a full matchup board. Transparency alone
+   keeps the stage visible while avoiding repeated blur recomposition every frame. */
+.round-stage-9 .round-roster-panel,
+.round-stage-9 .round-opponent-panel,
+.round-stage-10 .round-roster-panel,
+.round-stage-10 .round-opponent-panel,
+.round-stage-11 .round-roster-panel,
+.round-stage-11 .round-opponent-panel,
+.round-stage-12 .round-roster-panel,
+.round-stage-12 .round-opponent-panel,
+.round-stage-endless .round-roster-panel,
+.round-stage-endless .round-opponent-panel,
+.round-stage-9 .round-week-category,
+.round-stage-10 .round-week-category,
+.round-stage-11 .round-week-category,
+.round-stage-12 .round-week-category,
+.round-stage-endless .round-week-category {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* The floor glow stays static. No reason to continuously repaint a huge blurred layer. */
+.gg-arena-stage-glow {
+    animation: none !important;
+    will-change: auto !important;
+}
+
+/* Tiny glints still twinkle, but more slowly so they are practically free. */
+.gg-arena-particle {
+    animation-duration: 5.8s !important;
+    will-change: transform, opacity;
+}
+
+@media (max-width: 930px) {
+    /* Five visible lights is enough on smaller screens and reduces overdraw. */
+    .gg-arena-beam-6,
+    .gg-arena-beam-7 {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Four lights on phones keeps the atmosphere without wasting GPU fill-rate. */
+    .gg-arena-beam-5 {
+        display: none !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gg-arena-beam,
+    .gg-arena-particle {
+        animation: none !important;
+        will-change: auto !important;
+    }
+}
+
+/* =========================================================
+   ROUND 7+ DISTANT CROWD CAMERA FLASHES
+
+   Performance notes:
+   - tiny fixed elements only
+   - opacity + transform animation only
+   - no JavaScript animation loop
+   - no blur/filter animation
+   - maximum ten flashes on desktop
+   ========================================================= */
+
+/* Rounds 7-8 use only the crowd flashes. Keep the normal early-round
+   background intact and do not introduce the playoff stage yet. */
+.gg-arena-r7,
+.gg-arena-r8 {
+    background: transparent !important;
+}
+
+    .gg-arena-r7::before,
+    .gg-arena-r8::before,
+    .gg-arena-r7::after,
+    .gg-arena-r8::after,
+    .gg-arena-r7 .gg-arena-horizon-lights,
+    .gg-arena-r8 .gg-arena-horizon-lights,
+    .gg-arena-r7 .gg-arena-stage-glow,
+    .gg-arena-r8 .gg-arena-stage-glow,
+    .gg-arena-r7 .gg-arena-vignette,
+    .gg-arena-r8 .gg-arena-vignette {
+        display: none !important;
+    }
+
+.gg-arena-camera-flashes {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    pointer-events: none;
+    overflow: hidden;
+    contain: paint;
+}
+
+.gg-arena-camera-flash {
+    position: absolute;
+    left: var(--camera-x);
+    top: var(--camera-y);
+    width: var(--camera-size);
+    height: var(--camera-size);
+    border-radius: 999px;
+    background: rgba(245, 249, 255, .98);
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(.45);
+    box-shadow: 0 0 4px rgba(255, 255, 255, .90), 0 0 10px rgba(215, 230, 255, .42), 0 0 20px rgba(190, 215, 255, .16);
+    animation: ggCrowdCameraFlash var(--camera-duration) linear var(--camera-delay) infinite;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+    /* Tiny cross-shaped lens sparkle. These are static child shapes and inherit
+   the parent's transform/opacity, so they add almost no animation cost. */
+    .gg-arena-camera-flash::before,
+    .gg-arena-camera-flash::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background: rgba(248, 251, 255, .72);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+    }
+
+    .gg-arena-camera-flash::before {
+        width: 9px;
+        height: 1px;
+    }
+
+    .gg-arena-camera-flash::after {
+        width: 1px;
+        height: 9px;
+    }
+
+/* Brief pre-flash + main flash, followed by a long dark interval.
+   Because each dot has a different duration and negative delay, the crowd
+   never flashes in sync. */
+@keyframes ggCrowdCameraFlash {
+    0%, 1.6% {
+        opacity: 0;
+        transform: translate3d(-50%, -50%, 0) scale(.45);
+    }
+
+    2.05% {
+        opacity: .34;
+        transform: translate3d(-50%, -50%, 0) scale(1.25);
+    }
+
+    2.55% {
+        opacity: 0;
+        transform: translate3d(-50%, -50%, 0) scale(.65);
+    }
+
+    3.15% {
+        opacity: var(--camera-flash-peak, .80);
+        transform: translate3d(-50%, -50%, 0) scale(1.95);
+    }
+
+    3.8% {
+        opacity: .08;
+        transform: translate3d(-50%, -50%, 0) scale(1.05);
+    }
+
+    4.45%, 100% {
+        opacity: 0;
+        transform: translate3d(-50%, -50%, 0) scale(.55);
+    }
+}
+
+/* Crowd energy rises as the run gets deeper. */
+.gg-arena-r7 {
+    --camera-flash-peak: .52;
+}
+
+.gg-arena-r8 {
+    --camera-flash-peak: .60;
+}
+
+.gg-arena-r9 {
+    --camera-flash-peak: .68;
+}
+
+.gg-arena-r10 {
+    --camera-flash-peak: .76;
+}
+
+.gg-arena-r11 {
+    --camera-flash-peak: .86;
+}
+
+.gg-arena-r12 {
+    --camera-flash-peak: .96;
+}
+
+.gg-arena-endless {
+    --camera-flash-peak: .86;
+}
+
+/* Final-round flashes get a slightly warmer stadium-camera tint without
+   changing the animation cost. */
+.gg-arena-r12 .gg-arena-camera-flash {
+    background: rgba(255, 249, 239, .98);
+    box-shadow: 0 0 4px rgba(255, 255, 255, .95), 0 0 10px rgba(255, 231, 204, .44), 0 0 20px rgba(255, 207, 166, .16);
+}
+
+/* Reduce overdraw on smaller screens. */
+@media (max-width: 930px) {
+    .gg-arena-camera-flash:nth-child(n + 8) {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .gg-arena-camera-flash:nth-child(n + 6) {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gg-arena-camera-flash {
+        display: none !important;
+        animation: none !important;
+        will-change: auto !important;
+    }
+}
+
+
+/* =========================================================
+   LOW-LAG ARENA LIGHTS - VIEWPORT COMPOSITE PASS
+
+   The previous beams were as tall as the entire scrolling round page.
+   That meant the browser could be rotating several enormous layers.
+   This version keeps the atmosphere fixed to the viewport and limits
+   the stage to 3-4 beams. The only continuous beam animation is transform.
+   ========================================================= */
+
+.gg-arena-atmosphere {
+    position: fixed !important;
+    inset: 64px 0 0 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    contain: layout paint style !important;
+    transform: translateZ(0);
+}
+
+    /* Static center shaft. No blur repaint needed. */
+    .gg-arena-atmosphere::after {
+        filter: none !important;
+        width: min(36vw, 560px) !important;
+    }
+
+.gg-arena-beam {
+    top: -10% !important;
+    width: clamp(180px, 18vw, 320px) !important;
+    height: 120% !important;
+    min-height: 0 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    box-shadow: none !important;
+    will-change: transform !important;
+    backface-visibility: hidden !important;
+    contain: paint !important;
+    opacity: 1 !important;
+}
+
+    /* One gradient per beam instead of a second full-size inner cone. */
+    .gg-arena-beam::after {
+        display: none !important;
+    }
+
+/* Only four beam slots are used by the optimized React component. */
+.gg-arena-beam-1 {
+    left: 4% !important;
+    animation: ggLowLagSweepA 16s ease-in-out -3s infinite alternate !important;
+}
+
+.gg-arena-beam-2 {
+    left: 29% !important;
+    animation: ggLowLagSweepB 18s ease-in-out -9s infinite alternate !important;
+}
+
+.gg-arena-beam-3 {
+    left: 55% !important;
+    animation: ggLowLagSweepA 17s ease-in-out -6s infinite alternate-reverse !important;
+}
+
+.gg-arena-beam-4 {
+    left: 78% !important;
+    animation: ggLowLagSweepB 19s ease-in-out -12s infinite alternate-reverse !important;
+}
+
+.gg-arena-beam-5,
+.gg-arena-beam-6,
+.gg-arena-beam-7 {
+    display: none !important;
+}
+
+/* Transform-only keyframes. No animated opacity, blur, clip-path or size. */
+@keyframes ggLowLagSweepA {
+    from {
+        transform: translate3d(-2vw, 0, 0) rotate(18deg);
+    }
+
+    to {
+        transform: translate3d(2vw, 0, 0) rotate(-14deg);
+    }
+}
+
+@keyframes ggLowLagSweepB {
+    from {
+        transform: translate3d(2vw, 0, 0) rotate(-18deg);
+    }
+
+    to {
+        transform: translate3d(-2vw, 0, 0) rotate(14deg);
+    }
+}
+
+/* Preserve the round progression while keeping each beam inexpensive. */
+.gg-arena-r9 .gg-arena-beam {
+    --beam-opacity: .085 !important;
+}
+
+.gg-arena-r10 .gg-arena-beam {
+    --beam-opacity: .115 !important;
+}
+
+.gg-arena-r11 .gg-arena-beam {
+    --beam-opacity: .145 !important;
+}
+
+.gg-arena-r12 .gg-arena-beam {
+    --beam-opacity: .175 !important;
+}
+
+.gg-arena-endless .gg-arena-beam {
+    --beam-opacity: .15 !important;
+}
+
+/* Ambient specks are static now. Camera flashes provide the movement. */
+.gg-arena-particle {
+    animation: none !important;
+    will-change: auto !important;
+    opacity: .30 !important;
+}
+
+/* The radial gradient is already soft, so a large blur is unnecessary. */
+.gg-arena-stage-glow {
+    filter: none !important;
+    animation: none !important;
+    will-change: auto !important;
+}
+
+/* Camera flashes remain tiny opacity/scale animations and are cheap. */
+.gg-arena-camera-flash {
+    will-change: opacity, transform;
+}
+
+@media (max-width: 930px) {
+    .gg-arena-beam {
+        width: clamp(180px, 28vw, 280px) !important;
+    }
+
+    .gg-arena-beam-1 {
+        left: -3% !important;
+    }
+
+    .gg-arena-beam-2 {
+        left: 29% !important;
+    }
+
+    .gg-arena-beam-3 {
+        left: 61% !important;
+    }
+
+    .gg-arena-beam-4 {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .gg-arena-beam-3,
+    .gg-arena-beam-4 {
+        display: none !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gg-arena-beam,
+    .gg-arena-camera-flash {
+        animation: none !important;
+        will-change: auto !important;
+    }
+}
+/* =========================================================
+   LEGENDARY DIVISION RIVAL
+   ========================================================= */
+
+.legendary-perk-wrapper {
+    position: relative;
+    border: 2px solid #f6c744;
+    border-radius: 18px;
+    padding: 4px;
+    background: linear-gradient( 135deg, rgba(255, 214, 78, 0.16), rgba(255, 174, 0, 0.05), rgba(255, 214, 78, 0.16) );
+    overflow: hidden;
+}
+
+    .legendary-perk-wrapper::before {
+        content: "";
+        position: absolute;
+        inset: -80%;
+        background: linear-gradient( 115deg, transparent 35%, rgba(255, 255, 255, 0.32) 48%, transparent 61% );
+        animation: legendaryPerkShine 3.2s linear infinite;
+        pointer-events: none;
+    }
+
+.legendary-perk-tag {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 7px 10px;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    color: #ffd95a;
+}
+
+
+/* =========================================================
+   DIVISION RIVAL HEADER
+   ========================================================= */
+
+.division-rival-legendary-heading {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+    .division-rival-legendary-heading > span {
+        display: inline-block;
+        margin-bottom: 8px;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        color: #ffd95a;
+    }
+
+    .division-rival-legendary-heading h3 {
+        margin: 4px 0 8px;
+    }
+
+
+/* =========================================================
+   LOCKED PLAYER
+   ========================================================= */
+
+.division-rival-locked-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.division-rival-lock-label {
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   SLOT MACHINE
+   ========================================================= */
+
+.division-rival-slot-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    margin: 20px auto 32px;
+}
+
+.division-rival-slot-label {
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    color: #ffd95a;
+}
+
+.division-rival-slot {
+    width: min( 100%, 360px );
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    border-radius: 20px;
+    border: 3px solid rgba( 255, 215, 80, 0.75 );
+    background: linear-gradient( 180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.28) );
+    overflow: hidden;
+    position: relative;
+}
+
+    .division-rival-slot::before,
+    .division-rival-slot::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 24%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .division-rival-slot::before {
+        top: 0;
+        background: linear-gradient( to bottom, rgba(0, 0, 0, 0.65), transparent );
+    }
+
+    .division-rival-slot::after {
+        bottom: 0;
+        background: linear-gradient( to top, rgba(0, 0, 0, 0.65), transparent );
+    }
+
+    .division-rival-slot img {
+        width: 76px;
+        height: 76px;
+        object-fit: contain;
+        position: relative;
+        z-index: 2;
+    }
+
+    .division-rival-slot strong {
+        font-size: 2.3rem;
+        font-weight: 1000;
+        letter-spacing: 0.08em;
+        position: relative;
+        z-index: 2;
+    }
+
+    .division-rival-slot.spinning strong,
+    .division-rival-slot.spinning img {
+        animation: rivalSlotTick 0.15s ease-out;
+    }
+
+    .division-rival-slot.stopped {
+        animation: rivalSlotWinner 0.5s ease-out;
+    }
+
+.division-rival-spinning-text {
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    opacity: 0.75;
+}
+
+.division-rival-result {
+    font-size: 0.82rem;
+    font-weight: 1000;
+    letter-spacing: 0.18em;
+    color: #ffd95a;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes rivalSlotTick {
+    0% {
+        transform: translateY( -18px );
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY( 0 );
+        opacity: 1;
+    }
+}
+
+@keyframes rivalSlotWinner {
+    0% {
+        transform: scale( 0.92 );
+    }
+
+    55% {
+        transform: scale( 1.045 );
+    }
+
+    100% {
+        transform: scale( 1 );
+    }
+}
+
+@keyframes legendaryPerkShine {
+    0% {
+        transform: translateX( -35% ) rotate( 10deg );
+    }
+
+    100% {
+        transform: translateX( 35% ) rotate( 10deg );
+    }
+}
+
+
+@media ( prefers-reduced-motion: reduce ) {
+    .legendary-perk-wrapper::before,
+    .division-rival-slot,
+    .division-rival-slot strong,
+    .division-rival-slot img {
+        animation: none !important;
+    }
+}
+/* =========================================================
+   LEGAL / PRIVACY NAVIGATION
+   ========================================================= */
+
+.title-legal-links {
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    color: #454d58;
+}
+
+.title-legal-links button {
+    padding: 2px 0;
+    border: 0;
+    background: transparent;
+    color: #68717d;
+    font: inherit;
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: color 0.16s ease;
+}
+
+.title-legal-links button:hover,
+.title-legal-links button:focus-visible {
+    color: #ff7217;
+}
+
+.title-legal-links button:focus-visible {
+    outline: 1px solid rgba(255, 101, 0, 0.75);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.title-legal-links span {
+    color: #ff6500;
+    font-size: 6px;
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   LEGAL PAGES
+   ========================================================= */
+
+.legal-screen {
+    width: min(900px, calc(100% - 34px));
+}
+
+.legal-heading {
+    max-width: 720px;
+}
+
+.legal-heading .legal-effective-date {
+    margin-top: 10px;
+    color: #646d79;
+    font-size: 9px;
+    font-weight: 850;
+    letter-spacing: 0.5px;
+}
+
+.legal-document {
+    width: 100%;
+    padding: 34px 38px;
+    box-sizing: border-box;
+    border: 1px solid #2b323c;
+    border-radius: 14px;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(255, 101, 0, 0.045), transparent 25%),
+        linear-gradient(145deg, #14181f, #0e1116);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.28);
+}
+
+.legal-section + .legal-section {
+    margin-top: 30px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(255, 255, 255, 0.065);
+}
+
+.legal-section h2 {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 950;
+    letter-spacing: -0.2px;
+}
+
+.legal-section p {
+    margin: 0 0 11px;
+    color: #9aa3af;
+    font-size: 11px;
+    line-height: 1.72;
+}
+
+.legal-section p:last-child {
+    margin-bottom: 0;
+}
+
+.legal-section ul {
+    margin: 12px 0 0;
+    padding-left: 20px;
+    color: #9aa3af;
+}
+
+.legal-section li {
+    margin: 7px 0;
+    padding-left: 3px;
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.legal-section li::marker {
+    color: #ff6500;
+}
+
+.legal-notice-link {
+    margin-top: 22px;
+    min-height: 42px;
+    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 101, 0, 0.42);
+    border-radius: 8px;
+    background: rgba(255, 101, 0, 0.065);
+    color: #ff7217;
+    font-size: 9px;
+    font-weight: 950;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+}
+
+.legal-notice-link:hover,
+.legal-notice-link:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(255, 101, 0, 0.75);
+    background: rgba(255, 101, 0, 0.11);
+}
+
+.legal-notice-link:focus-visible {
+    outline: 2px solid rgba(255, 101, 0, 0.45);
+    outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+    .legal-document {
+        padding: 26px 22px;
+    }
+
+    .legal-section h2 {
+        font-size: 15px;
+    }
+
+    .legal-section p,
+    .legal-section li {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .legal-screen {
+        width: calc(100% - 22px);
+    }
+
+    .legal-document {
+        padding: 22px 17px;
+        border-radius: 11px;
+    }
+}

@@ -1,0 +1,28 @@
+GRIDIRON GAUNTLET - LEGAL / PRIVACY INTEGRATION
+September 9, 2026
+
+Integrated:
+- Privacy Policy page
+- Terms of Service page
+- Sports & Liability Disclaimer page
+- Open-Source Licenses page
+- Main-menu legal navigation
+- Full third-party license notice file
+- Updated README and SECURITY.md
+- Global no-referrer policy
+- Content Security Policy for current app resources
+- no-referrer / lazy-loading attributes on external player/team images
+- Relative Vite base path for static/subdirectory deployment
+
+BEFORE PUBLIC LAUNCH:
+Edit src/data/legalContent.js and replace:
+- [ADD CONTACT EMAIL BEFORE PUBLIC LAUNCH]
+- [ADD HOSTING PROVIDER BEFORE PUBLIC LAUNCH]
+- [ADD STATE / COUNTRY BEFORE PUBLIC LAUNCH]
+
+Validation notes:
+- legalContent.js and vite.config.js passed Node syntax checks.
+- A full Vite/Oxlint run could not be completed in this Linux sandbox because the uploaded node_modules contains Windows-native Rolldown/Oxlint bindings. On your Windows machine, run:
+    npm install
+    npm run lint
+    npm run build

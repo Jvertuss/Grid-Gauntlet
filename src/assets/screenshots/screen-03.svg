@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
+  <rect width="100%" height="100%" fill="#07111a"/>
+  <rect x="18" y="18" width="684" height="384" rx="10" fill="#061119" stroke="#15303a"/>
+  <g fill="#b0c3d0" font-family="Arial, Helvetica, sans-serif">
+	<text x="36" y="58" font-size="22" font-weight="700">Perks & Progression (Placeholder)</text>
+	<text x="36" y="98" font-size="14">Unlock perks to evolve your roster between rounds.</text>
+	<rect x="36" y="120" width="140" height="84" rx="8" fill="#0b1115" stroke="#23303a"/>
+	<rect x="192" y="120" width="140" height="84" rx="8" fill="#0b1115" stroke="#23303a"/>
+	<rect x="348" y="120" width="140" height="84" rx="8" fill="#0b1115" stroke="#23303a"/>
+	<text x="48" y="165" font-size="12">Time Travel • Trading • Second Wind • Bench</text>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
+  <rect width="100%" height="100%" fill="#081018"/>
+  <rect x="18" y="18" width="684" height="384" rx="10" fill="#071018" stroke="#18303a"/>
+  <g fill="#a6b8c6" font-family="Arial, Helvetica, sans-serif">
+	<text x="36" y="58" font-size="22" font-weight="700">Week Battles (Placeholder)</text>
+	<text x="36" y="98" font-size="14">Assign one roster player to each of the seven weekly battles.</text>
+	<g fill="#0b1014">
+	  <rect x="36" y="120" width="120" height="76" rx="8" fill="#0f1418" stroke="#23303a"/>
+	  <rect x="168" y="120" width="120" height="76" rx="8" fill="#0f1418" stroke="#23303a"/>
+	  <rect x="300" y="120" width="120" height="76" rx="8" fill="#0f1418" stroke="#23303a"/>
+	  <rect x="432" y="120" width="120" height="76" rx="8" fill="#0f1418" stroke="#23303a"/>
+	  <rect x="36" y="206" width="120" height="76" rx="8" fill="#0f1418" stroke="#23303a"/>
+	  <rect x="168" y="206" width="120" height="76" rx="8" fill="#0f1418" stroke="#23303a"/>
+	  <rect x="300" y="206" width="252" height="76" rx="8" fill="#0f1418" stroke="#23303a"/>
+	</g>
+	<text x="48" y="160" font-size="12">Place players into visible weeks; hidden (blind) weeks reveal at lock.</text>
+  </g>
+</svg>

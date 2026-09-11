@@ -1,0 +1,327 @@
+/* =========================================================
+   MOBILE DRAFT
+   Compact vertical position rows
+   QB
+   RB
+   WR
+   TE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .draft-page {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+
+    .draft-screen {
+        width: 100% !important;
+        max-width: none !important;
+        padding: 24px 14px max( 110px, calc(env(safe-area-inset-bottom) + 95px) ) !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .draft-heading {
+        width: 100% !important;
+        max-width: 760px !important;
+        margin: 0 auto 18px !important;
+    }
+
+
+        .draft-heading h2 {
+            font-size: clamp( 34px, 7vw, 52px ) !important;
+            line-height: 0.95 !important;
+        }
+
+
+    .draft-progress {
+        margin-top: 8px !important;
+        justify-content: center !important;
+        gap: 6px !important;
+    }
+
+
+    /* =====================================================
+       POSITION STACK
+       ===================================================== */
+
+    .draft-board {
+        width: 100% !important;
+        max-width: 760px !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
+
+    /* =====================================================
+       POSITION ROW
+       ===================================================== */
+
+    .draft-position-column {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 10px 12px 12px !important;
+        box-sizing: border-box !important;
+        border: 1px solid rgba( 255, 255, 255, 0.08 ) !important;
+        border-radius: 14px !important;
+        background: linear-gradient( 155deg, rgba(22, 26, 33, 0.97), rgba(10, 13, 18, 0.99) ) !important;
+        box-shadow: 0 8px 22px rgba( 0, 0, 0, 0.22 ) !important;
+    }
+
+
+    /* =====================================================
+       QB / RB / WR / TE
+       ===================================================== */
+
+    .draft-position-title {
+        margin: 0 0 9px !important;
+        text-align: center !important;
+        font-size: 16px !important;
+        line-height: 1 !important;
+        letter-spacing: 0.5px !important;
+    }
+
+
+    /* =====================================================
+       PLAYER ROW
+       ===================================================== */
+
+    .draft-position-cards {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        padding: 1px 2px 3px !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scrollbar-width: none !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+        .draft-position-cards::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        /* =====================================================
+       PLAYER CARD SIZE
+       Much closer to your FIRST screenshot
+       ===================================================== */
+
+        .draft-position-cards
+        .player-card,
+        .draft-position-cards
+        .player-card:last-child:nth-child(odd) {
+            grid-column: auto !important;
+            width: 138px !important;
+            min-width: 138px !important;
+            max-width: 138px !important;
+            height: 190px !important;
+            flex: 0 0 138px !important;
+            padding: 9px 7px 8px !important;
+            border-radius: 11px !important;
+        }
+
+
+        /* =====================================================
+       HEADSHOT
+       ===================================================== */
+
+        .draft-position-cards
+        .player-card-headshot-wrap {
+            width: 48px !important;
+            height: 48px !important;
+            min-width: 48px !important;
+            min-height: 48px !important;
+            margin-bottom: 4px !important;
+        }
+
+
+        /* =====================================================
+       TEAM LOGO
+       ===================================================== */
+
+        .draft-position-cards
+        .player-card-logo-wrap {
+            width: 21px !important;
+            height: 21px !important;
+            top: 6px !important;
+            right: 6px !important;
+        }
+
+
+        /* =====================================================
+       PLAYER NAME
+       ===================================================== */
+
+        .draft-position-cards
+        .player-card-name {
+            font-size: 10px !important;
+            line-height: 12px !important;
+        }
+
+
+        /* =====================================================
+       PLAYER META
+       ===================================================== */
+
+        .draft-position-cards
+        .player-card-meta {
+            margin-top: 2px !important;
+            gap: 2px !important;
+            font-size: 5px !important;
+            line-height: 7px !important;
+        }
+
+
+        /* =====================================================
+       STATS
+       ===================================================== */
+
+        .draft-position-cards
+        .player-card-bottom {
+            gap: 4px !important;
+        }
+
+
+        .draft-position-cards
+        .player-card-stat-box {
+            min-height: 34px !important;
+            padding: 4px 3px !important;
+            border-radius: 6px !important;
+        }
+
+
+            .draft-position-cards
+            .player-card-stat-box strong {
+                font-size: 11px !important;
+                line-height: 11px !important;
+            }
+
+
+            .draft-position-cards
+            .player-card-stat-box
+            .player-card-fp {
+                font-size: 13px !important;
+                line-height: 13px !important;
+            }
+
+
+            .draft-position-cards
+            .player-card-stat-box span {
+                font-size: 4px !important;
+                line-height: 5px !important;
+            }
+
+
+        /* =====================================================
+       SELECTED CHECK
+       ===================================================== */
+
+        .draft-position-cards
+        .player-card-selected-check {
+            width: 19px !important;
+            height: 19px !important;
+            top: 6px !important;
+            left: 6px !important;
+            font-size: 10px !important;
+        }
+
+
+    /* =====================================================
+       ACTION BAR
+       ===================================================== */
+
+    .draft-actions {
+        position: sticky !important;
+        bottom: max( 7px, env(safe-area-inset-bottom) ) !important;
+        z-index: 100 !important;
+        width: 100% !important;
+        max-width: 540px !important;
+        margin: 16px auto 0 !important;
+        padding: 8px !important;
+        box-sizing: border-box !important;
+        border-radius: 14px !important;
+        background: rgba( 10, 13, 18, 0.96 ) !important;
+        box-shadow: 0 12px 28px rgba( 0, 0, 0, 0.36 ) !important;
+    }
+
+
+    .draft-confirmed-actions {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat( 2, minmax(0, 1fr) ) !important;
+        gap: 8px !important;
+    }
+
+
+    .draft-lock-button,
+    .draft-start-button,
+    .draft-edit-button {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 46px !important;
+    }
+}
+
+
+/* =========================================================
+   NORMAL PHONE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .draft-screen {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+
+    .draft-position-column {
+        padding: 9px 7px 10px !important;
+    }
+
+
+    .draft-position-cards {
+        justify-content: flex-start !important;
+        gap: 8px !important;
+    }
+
+
+        .draft-position-cards
+        .player-card,
+        .draft-position-cards
+        .player-card:last-child:nth-child(odd) {
+            width: 118px !important;
+            min-width: 118px !important;
+            max-width: 118px !important;
+            height: 164px !important;
+            flex-basis: 118px !important;
+        }
+
+
+        .draft-position-cards
+        .player-card-headshot-wrap {
+            width: 42px !important;
+            height: 42px !important;
+            min-width: 42px !important;
+            min-height: 42px !important;
+        }
+
+
+    .draft-heading h2 {
+        font-size: clamp( 30px, 10vw, 40px ) !important;
+    }
+}

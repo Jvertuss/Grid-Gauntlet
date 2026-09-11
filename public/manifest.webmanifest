@@ -1,0 +1,36 @@
+{
+  "name": "Gridiron Gauntlet",
+  "short_name": "Gridiron GG",
+  "description": "A historical fantasy-football strategy game built around player-seasons, weekly matchups, perks, and a 12-round gauntlet.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080a0f",
+  "theme_color": "#080a0f",
+  "orientation": "any",
+  "categories": [
+    "games",
+    "sports"
+  ],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

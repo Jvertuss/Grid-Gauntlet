@@ -1,0 +1,107 @@
+.hall-of-fame {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.hall-empty {
+    padding: 28px;
+    text-align: center;
+    color: #9aa7b6;
+}
+
+.hall-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 14px;
+}
+
+.hof-card {
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #232a32;
+    background: linear-gradient(145deg, #0f1418, #0b0f13);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hof-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hof-stats {
+    display: flex;
+    flex-direction: column;
+}
+
+.hof-wins {
+    color: #ffb682;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+}
+
+.hof-round {
+    color: #9aa7b6;
+    font-size: 12px;
+}
+
+.hof-badge {
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 10px;
+}
+
+.hof-badge.champion {
+    background: linear-gradient(135deg,#ff7b2b,#ff4f00);
+    color: #081018;
+}
+
+.hof-badge.eliminated {
+    background: rgba(255,255,255,0.03);
+    color: #9aa7b6;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.hof-roster-scroll {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+}
+
+.hof-player-wrap {
+    min-width: 160px;
+    flex: 0 0 auto;
+}
+
+.hof-perks {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.hof-perk {
+    padding: 6px 10px;
+    background: rgba(255,101,0,0.06);
+    color: #ff9b6a;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 11px;
+}
+
+.hof-note {
+    color: #9aa7b6;
+    font-size: 12px;
+}
+
+.hall-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+}

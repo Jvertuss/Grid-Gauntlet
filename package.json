@@ -1,0 +1,27 @@
+{
+  "name": "gridiron-gauntlet",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "fetch-nfl-data": "node scripts/fetchSeasons.js",
+    "dev:browser": "vite --host 0.0.0.0",
+    "build:browser": "vite build",
+    "preview:browser": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.4",
+    "eslint": "^10.10.0",
+    "oxlint": "^1.75.0",
+    "vite": "^8.2.0"
+  },
+  "description": "NFL fantasy draft roguelike built with React and Vite"
+}
