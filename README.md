@@ -27,16 +27,6 @@ The main menu includes built-in pages for:
 - Sports & Liability Disclaimer
 - Open-Source Licenses
 
-Legal text is stored in `src/data/legalContent.js` and rendered by `src/components/LegalPage.jsx`.
-
-### Replace these placeholders before public launch
-
-Open `src/data/legalContent.js` and replace:
-
-- `[ADD CONTACT EMAIL BEFORE PUBLIC LAUNCH]`
-- `[ADD HOSTING PROVIDER BEFORE PUBLIC LAUNCH]`
-- `[ADD STATE / COUNTRY BEFORE PUBLIC LAUNCH]`
-
 The policies should be reviewed again any time accounts, analytics, advertising, payments, cloud saves, user-generated content, or other data-collection features are added.
 
 ## Current privacy behavior
