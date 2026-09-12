@@ -34,11 +34,6 @@ import {
 import "./styles/app.css";
 import "./styles/layout.css";
 import "./styles/mobile.css";
-import screenshotDraft from "./assets/screenshots/screen-01.svg";
-import screenshotBattles from "./assets/screenshots/screen-02.svg";
-import screenshotPerks from "./assets/screenshots/screen-03.svg";
-
-
 /* =========================================================
    CONSTANTS
    ========================================================= */
@@ -12159,7 +12154,6 @@ export default function App() {
                     "DRAFT 7 PLAYER-SEASONS",
                 text:
                     "Build a valid starting roster from historical NFL seasons: QB, RB, RB, WR, WR, TE, and one FLEX from RB/WR/TE.",
-                image: screenshotDraft,
             },
             {
                 number:
@@ -12168,7 +12162,6 @@ export default function App() {
                     "ASSIGN THE WEEK BATTLES",
                 text:
                     "Each round contains seven historical weeks. Place exactly one active roster player into each battle. Visible weeks only accept players who actually played that week.",
-                image: screenshotBattles,
             },
             {
                 number:
@@ -12257,13 +12250,6 @@ export default function App() {
                                         step.number
                                     }
                                 >
-                                    {step.image && (
-                                        <img
-                                            src={step.image}
-                                            alt={step.title}
-                                            className="how-to-play-screenshot"
-                                        />
-                                    )}
                                     <span className="how-to-play-number">
                                         {step.number}
                                     </span>
