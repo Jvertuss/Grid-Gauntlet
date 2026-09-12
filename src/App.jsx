@@ -180,8 +180,6 @@ const NFL_DIVISION_BY_TEAM =
 const CREATOR_NAME =
     "Jvertus";
 
-const LINKEDIN_URL =
-    "https://www.linkedin.com/in/elionel/";
 
 const GITHUB_URL =
     "";
