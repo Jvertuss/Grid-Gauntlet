@@ -12131,16 +12131,9 @@ export default function App() {
                                 DESIGNED &amp; DEVELOPED BY
                             </span>
 
-                            <a
-                                href={
-                                    LINKEDIN_URL
-                                }
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                referrerPolicy="no-referrer"
-                            >
-                                {CREATOR_NAME} ↗
-                            </a>
+                            <span>
+                                {CREATOR_NAME}
+                            </span>
                         </div>
                     </section>
                 </main>
@@ -12421,17 +12414,6 @@ export default function App() {
                     </section>
 
                     <div className="about-links">
-                        <a
-                            href={
-                                LINKEDIN_URL
-                            }
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            referrerPolicy="no-referrer"
-                        >
-                            LINKEDIN ↗
-                        </a>
-
                         {GITHUB_URL && (
                             <a
                                 href={
